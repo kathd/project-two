@@ -2,7 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-
+require("dotenv").config();
 var indexRouter = require('./routes/index');
 var authRouter = require('./routes/auth');
 

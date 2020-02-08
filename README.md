@@ -3,9 +3,9 @@ Ironhack Project # 2
 
 .ENV
 <br><br>
-PORT= 
-MONGO_URI= mongodb://localhost/project2
-CLOUDINARY_NAME = 
-CLOUDINARY_KEY = 
-CLOUDINARY_SECRET = 
-SESSION_SECRET= 
+PORT= <br>
+MONGO_URI= mongodb://localhost/project2 <br>
+CLOUDINARY_NAME = <br>
+CLOUDINARY_KEY = <br>
+CLOUDINARY_SECRET = <br>
+SESSION_SECRET= <br>

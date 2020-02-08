@@ -1,0 +1,25 @@
+<div class="form-container">
+    <form id="form" action="/auth/signup" method="POST">
+        <label for="firstname">First Name</label><br>
+        <input type="text" name="firstname" placeholder="First Name">
+
+        <label for="lastname">Last Name</label><br>
+        <input type="text" name="lastname" placeholder="Last Name">
+
+        <label for="company">Company</label><br>
+        <input type="text" name="company" placeholder="Company">
+        
+        <label for="email">Email</label><br>
+        <input type="text" name="email" placeholder="Email">
+
+        <label for="password">Password</label><br>
+        <input type="password" name="password" placeholder="********">
+        <button type="submit">Create account</button>
+        <p>Already have an account? <a href="/auth/signin">Sign In</a></p>
+    </form>
+    <div class="error-container">
+        {{#if error}}
+        <span class="error-message">{{error}}</span>
+        {{/if}}
+    </div>
+</div>

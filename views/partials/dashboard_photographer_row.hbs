@@ -1,0 +1,18 @@
+<td class="table-division">
+  <div><img src="{{this.profile_picture}}" alt="img" class="table-image" /></div>
+</td>
+<td class="table-division">
+  <div>{{this.name}}</div>
+</td>
+<td class="table-division">
+  <div>{{this.description}}</div>
+</td>
+<td class="table-division">
+  <div>${{this.price}}</div>
+</td>
+<td class="table-division">
+  <a href="/photographers/{{this._id}}/edit" data-id-photographer="{{this._id}}" class="fa fa-edit table-icon"></a>
+</td>
+<td class="table-division">
+  <a href="/photographers/{{this._id}}/delete"><span class="fa fa-trash table-icon" data-id-sneaker="{{this._id}}"  aria-hidden="true"></span></a> 
+</td>

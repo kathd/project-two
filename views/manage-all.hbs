@@ -1,1 +1,30 @@
 {{!-- this is going to be a table with edit and delete options--}}
+
+<div class="big-container manage-photographer-wrapper">
+  <h3 class="manage-photographers-title">Manage your Photographers catalog</h3>
+  <table class="photographer-manage-table">
+    <thead>
+      <tr class="table-row">
+        <th class="table-head">Photographer profil pic</th>
+        <th class="table-head">Photographer Name</th>
+        <th class="table-head">Photographer Ref</th>
+        <th class="table-head">Photographer Prixe</th>
+        <th class="table-head">Edit</th>
+        <th class="table-head">Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{#each photographers}}
+      <tr class="table-row">
+        {{> dashboard_photographer_row}}
+      </tr>
+      {{/each}}
+      {{#unless photographers}}
+      <tr>
+        <td colspan="6">sorry no photographer yet</td>
+      </tr>
+      {{/unless}}
+    </tbody>
+  </table>
+</div>

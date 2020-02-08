@@ -1,0 +1,15 @@
+<h2>All our photographers</h2>
+
+{{#unless photographers}}
+<a>sorry not photographers yet!</a>
+{{/unless}}
+
+{{#each photographers}}
+<img src="{{this.profile_picture}}">
+<li>{{this.name}}</li>
+<p>{{this.description}}</p>
+<a>{{this.price}}</a>
+<a>{{this.location}}</a>
+<a>{{this.email}}</a>
+{{/each}}
+

@@ -40,7 +40,7 @@ const authRouter = require('./routes/auth');
 const photographersRouter = require('./routes/photographer')
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
-app.use('/photographer', photographersRouter)
+app.use('/photographers', photographersRouter)
 
 
 // catch 404 and forward to error handler

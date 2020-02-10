@@ -20,10 +20,12 @@ const photographerSchema = new Schema({
     },
     profile_picture: {
         type: String,
-    }
-    // reviews: ,
-    // portfolio: ,
-    // categories: ,
+    },
+    reviews: {
+        type : [String]
+    } ,
+    portfolio: [String],
+    categories: [String],
 
 });
 

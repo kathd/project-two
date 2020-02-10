@@ -66,7 +66,7 @@ router.get("/:id/edit", (req, res, next) => {
     photographerModel
     .findById(req.params.id)
     .then(dbRes => {
-      res.render("forms/edit-ph", { photographer: dbRes });
+      res.render("forms/editph", { photographer: dbRes });
     })
     .catch(dbErr => console.error(dbErr));
 });
@@ -85,7 +85,7 @@ router.post("/:id/edit", (req, res, next) => {
         categories 
     })
     .then(dbRes => {
-            res.redirect("/");
+            res.redirect("/photographers");
         })
         .catch(dbErr => {
             console.error("OH no, db err :", dbErr) 

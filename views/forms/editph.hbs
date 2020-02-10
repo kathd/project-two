@@ -1,0 +1,29 @@
+<h1> Edit photographer</h1>
+<div class="form-container">
+    <form id="form" action="/photographers/{{photographer._id}}/edit" method="POST">
+        <label for="name">Name</label>
+        <input type="text" name="name" placeholder="Name" value="{{photographer.name}}"><br>
+
+        <label for="description">Description</label>
+        <textarea type="text" name="description" placeholder="Blablabla" >{{photographer.description}}</textarea><br>
+        <br>
+        <label for="price">Price</label>
+        <input type="number" name="price" placeholder="700" value="{{photographer.price}}"><br>
+        <br>
+        <br>
+        <label for="location"> Please select your location</label><br>
+          <input type="radio" name="location" value="Paris"> Paris<br>
+          <input type="radio" name="location" value="London"> London<br>
+          <input type="radio" name="location" value="Berlin"> Berlin<br> 
+
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="johndoe@gmail.com" value="{{photographer.email}}"><br>
+        <button type="submit">Edit photographer</button>
+        
+    </form>
+    <div class="error-container">
+        {{#if error}}
+        <span class="error-message">{{error}}</span>
+        {{/if}}
+    </div>
+</div>

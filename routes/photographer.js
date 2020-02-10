@@ -41,6 +41,17 @@ router.get("/:id", (req, res, next ) => {
 })
 
 
+router.get("/manage", (req, res, next)=> {
+    photographerModel
+    .find()
+    .then(photographers => {
+        res.render("manage-all", {photographers});
+    })
+    .catch(dbErr => console.error("OH no, db err :", dbErr))
+    })
+
+
+
 router.get("/:id/delete", (req, res, next) => {
     photographerModel
     .findByIdAndDelete(req.params.id)

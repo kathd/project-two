@@ -41,9 +41,7 @@ app.use(
 );
 
 
-//ROUTING
-app.use("/", require("./routes"));
-app.use("/auth", require("./routes/auth"));
+
 
 
 

@@ -1,3 +1,7 @@
+/* 
+Brick color: #B62A3D
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +14,7 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #B62A3D;
 }
 
 /* NAV BAR */

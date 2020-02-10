@@ -9,8 +9,13 @@
   </div>
   <div class="admin-nav overlay-content">
     {{#if isLoggedIn}}
-    <a href="/photographers/add">Add</a>
-    <a href="/photographers/manage">Manage</a>
+    <button class="dropbtn">Admin
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/photographers/add">Add</a>
+      <a href="/photographers/manage">Manage</a>
+    </div>
     {{/if}}
   </div>
   <div class="right-nav overlay-content">

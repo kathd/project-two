@@ -1,4 +1,13 @@
-require('dotenv').config();
+require("dotenv").config();
+require("./config/dbconnect");
+
+
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var hbs = require("hbs");
+var cookieParser = require('cookie-parser');
+var session = require("express-session")
 
 const createError = require('http-errors');
 const express = require('express');
@@ -19,6 +28,29 @@ hbs.registerPartials(path.join(__dirname, "/views/partials"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
+
+hbs.registerPartials(path.join(__dirname, "views/partials"))
+
+//INIT SESSION
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    saveUninitialized: true,
+    resave: true
+  })
+);
+
+
+//ROUTING
+app.use("/", require("./routes"));
+app.use("/auth", require("./routes/auth"));
+
+
+
+
+
+
+
 
 
 // ROUTES

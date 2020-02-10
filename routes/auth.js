@@ -1,9 +1,18 @@
 var express = require('express');
 var router = express.Router();
+const userModel = require("../models/User");
+const bcrypt = require("bcryptjs");
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+
+//VIEW FORM SIGNIN/UP
+router.get("/signin", (req, res) => {
+  res.render("/auth/signin");
 });
+
+router.get("/signup", (req, res) => {
+  res.render("/auth/signup");
+});
+
+
 
 module.exports = router;

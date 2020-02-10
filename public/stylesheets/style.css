@@ -35,10 +35,11 @@ a {
 
 #nav-main a:hover {
   color: #B62A3D;
+  cursor: pointer;
 }
 
 .left-nav {
-  width: 33%;
+  width: 30%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -51,13 +52,13 @@ a {
 
 .center-nav {
   /* position: fixed; */
-  width: 33%;
+  width: 40%;
   display: flex;
   justify-content: center;
 }
 
 .right-nav {
-  width: 16%;
+  width: 18%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -70,11 +71,9 @@ a {
 /* START >>> ADMIN NAV */
 
 .admin-nav {
-  width: 16%;
+  width: 10%;
   overflow: hidden;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  /* text-align: end; */
 }
 
 .admin-nav .dropbtn {
@@ -102,7 +101,9 @@ a {
   background-color: #fff;
   min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  /* z-index: 1; */
+  visibility: hidden;
+  /* transition: all 0.5s ease; */
 }
 
 .dropdown-content a {
@@ -120,11 +121,9 @@ a {
 
 .admin-nav:hover .dropdown-content {
   display: block;
+  visibility: visible;
 }
 
-/* .admin-nav a {
-  margin-left: 20px;;
-} */
 
 /* INTRO PAGE */
 

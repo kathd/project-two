@@ -1,11 +1,19 @@
 <nav id="nav-main" class="nav">
-    {{!-- <a href="/main">Home</a> --}}
+  {{!-- <a href="/main">Home</a> --}}
+  <div class="left-nav">
+    <a href="#">Our Talents</a>
+    <a href="#">About Us</a>
+  </div>
+  <div class="center-nav">
     <h2 id="logo">Project 2</h2>
-    <a href="">Photographers</a>
+  </div>
+  <div class="admin-nav">
     {{#if isLoggedIn}}
-    <a href="">Add Photographer</a>
-    <a href="">Manage Photographer</a>
+    <a href="">Add Talent</a>
+    <a href="">Manage Talents</a>
     {{/if}}
+  </div>
+  <div class="right-nav">
     {{#unless isLoggedIn}}
     <a href="/auth/signup">Sign Up</a>
     <a href="/auth/signin">Sign In</a>
@@ -14,6 +22,8 @@
     {{#if isLoggedIn}}
     <a href="/auth/signout">Sign Out</a>
     {{/if}}
+  </div>
+
 </nav>
 
 {{!-- <div class="big-container">

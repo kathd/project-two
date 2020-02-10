@@ -8,15 +8,9 @@ var path = require('path');
 var hbs = require("hbs");
 var cookieParser = require('cookie-parser');
 var session = require("express-session")
-
-const createError = require('http-errors');
-const express = require('express');
-const hbs = require('hbs');
-const session = require('express-session');
 const mongoose = require('mongoose');
 const MongoStore = require("connect-mongo")(session);
-const cookieParser = require('cookie-parser');
-const path = require('path');
+
 
 const app = express();
 

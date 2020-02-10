@@ -1,18 +1,56 @@
-<h2>All our photographers</h2>
+<h2 id="all-our-ph">All our photographers</h2>
+<div class="global-container">
+<div class="search-container">
+   
+        <div class="form-container">
+            <h3>Search a photographer</h3>
+             <form id="form" action="/photographers/add" method="POST">
+            <label for="name">Name</label><br>
+            <input type="text" name="name" placeholder="Name">
 
-{{#unless photographers}}
-<a>sorry not photographers yet!</a>
-{{/unless}}
+            <label for="price">Price</label><br>
+            <input type="number" name="price" placeholder="700">
 
-{{#each photographers}}
-<img src="{{this.profile_picture}}">
-<h3>{{this.name}}</h3>
-<p>{{this.description}}</p>
-<a>{{this.price}}</a>
-<a>{{this.location}}</a>
-<a>{{this.email}}</a>
-<br>
-<br>
-{{/each}}
+            <label for="location"> Please select your location</label><br>
+            <input type="radio" name="categories" value="Paris"> Paris<br>
+            <input type="radio" name="categories" value="London"> London<br>
+            <input type="radio" name="categories" value="Berlin"> Berlin<br> 
+            
+            <label for="categories"> Please select yours specialties</label><br>
+            <input type="checkbox" name="categories" value="Events"> Events
+            <input type="checkbox" name="categories" value="lifestyle"> Lifestyle
+            <input type="checkbox" name="categories" value="real estate"> Real estate
+            <input type="checkbox" name="categories" value="Portrait">Portrait
+            <input type="checkbox" name="categories" value="real estate"> Packshots and still life
+            <input type="checkbox" name="categories" value="Food"> Food
+            <input type="checkbox" name="categories" value="Mode"> Mode
+            <input type="checkbox" name="categories" value="Advertising"> Advertising
+
+            <button type="submit">Find</button>
+            
+        </form>
+        </div>
+    </div>
+    <div class="photographer-found">
+    {{#unless photographers}}
+    <a>sorry not photographers yet!</a>
+    {{/unless}}
+
+    {{#each photographers}}
+    <div class="photographer-block">
+    <img class="profil-pic" src="{{this.profile_picture}}">
+    <h3>{{this.name}}</h3>
+    <p class="ph-description">{{this.description}}</p>
+    <ul>
+    <li>{{this.price}}</a>
+    <li>{{this.location}}</a>
+    <li>{{this.email}}</a>
+    </ul>
+    </div>
+    <br>
+    <br>
+    {{/each}}
+    </div>
+    </div>
 
 

@@ -38,17 +38,27 @@
 
     {{#each photographers}}
     <div class="photographer-block">
+    <div class="portfolio-block">
+        <img class="img-portfolio" src="{{this.portfolio.[0]}}">
+        <img class="img-portfolio" src="{{this.portfolio.[1]}}">
+        <img class="img-portfolio" src="{{this.portfolio.[2]}}">
+        <img class="img-portfolio" src="{{this.portfolio.[3]}}">
+    </div>
+    <div class="name-pic">
     <img class="profil-pic" src="{{this.profile_picture}}">
-    <h3>{{this.name}}</h3>
-    <p class="ph-description">{{this.description}}</p>
-    <ul>
-    <li>{{this.price}}</a>
-    <li>{{this.location}}</a>
-    <li>{{this.email}}</a>
-    </ul>
+    <h3 class="name">{{this.name}}</h3>
     </div>
     <br>
+    <div class="basic-info">
+    <div>Daily rates :{{this.price}}€</div>
+    <div>City :{{this.location}}</div>
+    <div>mail :{{this.email}}</div>
+    </div>
     <br>
+    
+    </div>
+    
+  
     {{/each}}
     </div>
     </div>

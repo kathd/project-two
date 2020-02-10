@@ -10,14 +10,37 @@
 .photographer-found{
    display: flex;
    flex-wrap: wrap;
-   justify-content: center;
+
 }
 
 .photographer-block{
     width: 30em;
-    height: 30em;
-    margin: 20px;
+    height: fit-content;
+    border-radius: 30px;
+    margin: 3em;
+    border: 2mm ridge #B62A3D;
+
 }
+.portfolio-block{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr ;
+    height: 20em;
+}
+
+
+.img-portfolio{
+   max-height: 100%;
+}
+
+
+
+.name-pic{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .profil-pic{
     height: 5em;
     width: 5em;
@@ -25,5 +48,12 @@
 }
 
 .ph-description{
+  font-style: italic ;
+  font-size: 0.8em;
+  margin: 3em;
+}
 
+.basic-info{
+    display: flex;
+    flex-direction: column;
 }

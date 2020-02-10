@@ -25,7 +25,7 @@ a {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 10px 40px;
 }
 
 #nav-main a {
@@ -78,7 +78,7 @@ a {
 
 .admin-nav .dropbtn {
   border: 1px solid #B62A3D;
-  border-radius: 8px;
+  border-radius: 5px;
   font-size: inherit;
   border: none;
   outline: none;
@@ -123,6 +123,22 @@ a {
   display: block;
   visibility: visible;
 }
+
+/* START >>> STICKY NAV BAR */
+    
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #fff;
+    }
+      
+    .sticky + .content {
+        padding-top: 110px;
+    }
+
+/* END >>> STICKY NAV BAR */
+
 
 
 /* INTRO PAGE */

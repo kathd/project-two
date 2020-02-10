@@ -27,6 +27,7 @@ button color (brick): #B62A3D
 .add-form input[type=text],
 .add-form input[type=number],
 .add-form input[type=email],
+.add-form textarea,
 .add-form select,
 .add-form button {
     box-sizing: border-box;
@@ -41,10 +42,6 @@ button color (brick): #B62A3D
     width: 100%;
     height: 70px;
     resize: none;
-}
-
-.add-form input[type=checkbox] {
-
 }
 
 .add-form button {

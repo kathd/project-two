@@ -54,7 +54,7 @@ a {
 
 /* INTRO PAGE */
 
-.intro-page {
+.intro-container {
   height: 650px;
   display: flex;
   flex-direction: column;
@@ -67,6 +67,18 @@ a {
   flex-direction: row;
 
 }
+
+/* ===== MASONRY ===== */
+
+/* fluid 5 columns */
+.grid-sizer,
+.grid-item { width: 20%; }
+/* 2 columns */
+.grid-item--width2 { width: 40%; }
+
+
+
+/* SMALLER SCREENS - RESPONSIVE SECTION */
 
 @media (max-width: 768px) {
   

@@ -1,39 +1,81 @@
-<h1> Add photographer</h1>
-<div class="form-container">
-    <form id="form" action="/photographers/add" method="POST">
-        <label for="name">Name</label><br>
-        <input type="text" name="name" placeholder="Name">
+<div class="pages">
+  <div class="page-title"><h1>Add Photographer</h1></div>
+  <div class="form-container">
+    <form class="add-form" action="/photographers/add" method="POST">
+      <label for="name">Name</label>
+      <input type="text" name="name" placeholder="Name">
 
-        <label for="description">Description</label><br>
-        <textarea type="text" name="description" placeholder="Blablabla"></textarea>
+      <label for="description">Description</label>
+      <textarea type="text" name="description" placeholder="Blablabla"></textarea>
 
-        <label for="price">Price</label><br>
-        <input type="number" name="price" placeholder="700">
+      <label for="price">Price</label>
+      <input type="number" name="price" placeholder="700">
 
-        <label for="location"> Please select your location</label><br>
-          <input type="radio" name="categories" value="Paris"> Paris<br>
-          <input type="radio" name="categories" value="London"> London<br>
-          <input type="radio" name="categories" value="Berlin"> Berlin<br> 
-        
-        <label for="categories"> Please select yours specialties</label><br>
-          <input type="checkbox" name="categories" value="Events"> Events
-          <input type="checkbox" name="categories" value="lifestyle"> Lifestyle
-          <input type="checkbox" name="categories" value="real estate"> Real estate
-          <input type="checkbox" name="categories" value="Portrait">Portrait
-          <input type="checkbox" name="categories" value="real estate"> Packshots and still life
-          <input type="checkbox" name="categories" value="Food"> Food
-          <input type="checkbox" name="categories" value="Mode"> Mode
-          <input type="checkbox" name="categories" value="Advertising"> Advertising
-         
-        <label for="email">Email</label><br>
-        <input type="email" name="email" placeholder="johndoe@gmail.com">
-        <button type="submit">Create photographer</button>
-        
+      <h4>Select location</h4>
+      <div class="select-location">
+        <span>
+          <input id="location1" type="radio" name="location" value="Paris">
+          <label for="location1">Paris</label>
+        </span>
+        <span>
+          <input id="location2" type="radio" name="location" value="London">
+          <label for="location2">London</label>
+        </span>
+        <span>
+          <input id="location3" type="radio" name="location" value="Berlin">
+          <label for="location3">Berlin</label>
+        </span>
+      </div>
+      
+      <p>Select specialties</p>
+      <div class="select-specialties"></div>
+        <span>
+          <input type="checkbox" id="events" name="categories" value="events">
+          <label for="events">Events</label>
+        </span>
+        <span>
+          <input type="checkbox" id="lifestyle" name="categories" value="lifestyle">
+          <label for="lifestyle">Lifestyle</label>
+        </span>
+        <span>
+          <input type="checkbox" id="real-estate" name="categories" value="real estate">
+          <label for="real-estate">Real Estate</label>
+        </span>
+        <span>
+          <input type="checkbox" id="portrait" name="categories" value="portrait">
+          <label for="portrait">Portrait</label>
+        </span>
+        <span>
+          <input type="checkbox" id="packshots" name="categories" value="packshots">
+          <label for="packshots">Packshots and Still Life</label>
+        </span>
+        <span>
+          <input type="checkbox" id="food" name="categories" value="food">
+          <label for="food">Food</label>
+        </span>
+        <span>
+          <input type="checkbox" id="fashion" name="categories" value="fashion">
+          <label for="fashion">Fashion</label>
+        </span>
+        <span>
+          <input type="checkbox" id="advertising" name="categories" value="advertising">
+          <label for="advertising">Advertising</label>
+        </span>
+      </div>
+      
+      <label for="email">Email</label>
+      <input type="email" name="email" placeholder="johndoe@gmail.com">
+      
+      
+      <button type="submit">Add Photographer</button>
     </form>
-    <div class="error-container">
-        {{#if error}}
-        <span class="error-message">{{error}}</span>
-        {{/if}}
-    </div>
-</div>
 
+    <div class="error-container">
+      {{#if error}}
+      <span class="error-message">{{error}}</span>
+      {{/if}}
+    </div>
+  </div>
+
+
+</div>

@@ -40,19 +40,6 @@ app.use(
   })
 );
 
-
-//ROUTING
-app.use("/", require("./routes"));
-app.use("/auth", require("./routes/auth"));
-
-
-
-
-
-
-
-
-
 // ROUTES
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');

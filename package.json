@@ -17,6 +17,7 @@
     "express-session": "^1.17.0",
     "hbs": "^4.1.0",
     "http-errors": "~1.6.3",
+    "masonry-layout": "^4.2.2",
     "mongodb": "^3.5.2",
     "mongoose": "^5.8.11",
     "morgan": "~1.9.1",

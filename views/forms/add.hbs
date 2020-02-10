@@ -1,1 +1,29 @@
 <h1> Add photographer</h1>
+<div class="form-container">
+    <form id="form" action="/forms/add" method="POST">
+        <label for="name">Name</label><br>
+        <input type="text" name="name" placeholder="Name">
+
+        <label for="description">Description</label><br>
+        <textarea type="text" name="description" placeholder="Blablabla"></textarea>
+
+        <label for="price">Price</label><br>
+        <input type="number" name="price" placeholder="700">
+        
+        <label for="location"> Please select your location</label><br>
+          <input type="radio" name="location" value="Paris"> Paris<br>
+          <input type="radio" name="location" value="London"> London<br>
+          <input type="radio" name="location" value="Berlin"> Berlin<br> 
+
+        <label for="email">Email</label><br>
+        <input type="email" name="email" placeholder="johndoe@gmail.com">
+        <button type="submit">Create photographer</button>
+        
+    </form>
+    <div class="error-container">
+        {{#if error}}
+        <span class="error-message">{{error}}</span>
+        {{/if}}
+    </div>
+</div>
+

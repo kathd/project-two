@@ -34,6 +34,10 @@ app.use(
   })
 );
 
+
+//MIDDLEWARES
+app.use(require("./middlewares/loginStatus"));
+
 // ROUTES
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');

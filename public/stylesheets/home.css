@@ -1,4 +1,13 @@
 * {box-sizing: border-box;}
+
+.intro-container {
+  background-image: url(../images/ben-blennerhassett-lw4jM1smaCs-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-position: center; */
+}
+
+
 #second-part {
   padding: 20px;
   background-color: lightgray;
@@ -36,17 +45,25 @@
   .visual-container {
     columns: 2;
   }
+
+  .intro-container {
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 @media (max-width: 600px) {
   .visual-container {
     columns: 1;
   }
+
+  .intro-container {
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 /* IMAGE DISPLAY TRANSITION/ANIMATION */
-
-
 
 .img-home {
   opacity: 1;
@@ -64,6 +81,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: 'Varela Round', sans-serif;
+  width: 100%;
+  text-align: center;
 }
 
 .box:hover .img-home {
@@ -75,7 +95,14 @@
 }
 
 .text {
-  color: white;
-  font-size: 16px;
+  color: black;
+  font-size: 20px;
   padding: 16px 32px;
+  color: rgb(56, 56, 56);
+}
+
+.text span {
+  font-size: 13px;
+  color: #B62A3D;
+  font-style: oblique;
 }

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const photographerModel = require(("../models/Photographer");
+const photographerModel = require("../models/Photographer");
 
 
 // Display all photographer 
@@ -81,5 +81,8 @@ router.post("/photographers/:id/edit", (req, res, next) => {
             
          } );
     })
+
+    module.exports = router;
+
 
 

@@ -53,6 +53,13 @@ app.use("/auth", require("./routes/auth"));
 
 
 
+// ROUTES
+const indexRouter = require('./routes/index');
+const authRouter = require('./routes/auth');
+const photographersRouter = require('./routes/photographer')
+app.use('/', indexRouter);
+app.use('/auth', authRouter);
+app.use('/photographer', photographersRouter)
 
 
 // catch 404 and forward to error handler

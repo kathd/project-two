@@ -1,4 +1,13 @@
-require('dotenv').config();
+require("dotenv").config();
+require("./config/dbconnect");
+
+
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var hbs = require("hbs");
+var cookieParser = require('cookie-parser');
+var session = require("express-session")
 
 const createError = require('http-errors');
 const express = require('express');
@@ -20,12 +29,30 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
+hbs.registerPartials(path.join(__dirname, "views/partials"))
 
-// ROUTES
-const indexRouter = require('./routes/index');
-const authRouter = require('./routes/auth');
-app.use('/', indexRouter);
-app.use('/auth', authRouter);
+//INIT SESSION
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    saveUninitialized: true,
+    resave: true
+  })
+);
+
+
+//ROUTING
+app.use("/", require("./routes"));
+app.use("/auth", require("./routes/auth"));
+
+
+
+
+
+
+
+
+
 
 
 // catch 404 and forward to error handler

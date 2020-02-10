@@ -31,6 +31,15 @@ router.post('/add', (req, res)=> {
 })
 
 
+router.get("/manage", (req, res, next)=> {
+    photographerModel
+    .find()
+    .then(photographers => {
+        res.render("manage-all", {photographers});
+    })
+    .catch(dbErr => console.error("OH no, db err :", dbErr))
+    })
+
 router.get("/:id", (req, res, next ) => {
     photographerModel
     .findById(req.params.id)
@@ -39,6 +48,9 @@ router.get("/:id", (req, res, next ) => {
     })
     .catch(dbErr => console.error("OH no, db err :", dbErr));
 })
+
+
+
 
 
 router.get("/:id/delete", (req, res, next) => {

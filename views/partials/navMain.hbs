@@ -9,8 +9,8 @@
   </div>
   <div class="admin-nav overlay-content">
     {{#if isLoggedIn}}
-    <a href="">Add Talent</a>
-    <a href="">Manage Talents</a>
+    <a href="/photographers/add">Add Talent</a>
+    <a href="/photographers/manage">Manage Talents</a>
     {{/if}}
   </div>
   <div class="right-nav overlay-content">
@@ -25,43 +25,3 @@
   </div>
 
 </nav>
-
-{{!-- <div class="big-container">
-  <header class="header">
-    <nav class="nav-wrapper flexed-item">
-      <div class="nav-link-wrapper flexed-item">
-        <div class="nav-logo">
-          <a href="/home" class="flexed-item">
-            <span class="logo-item circle"></span>
-            <h2 class="logo-item">SNEAKLOVE</h2>
-          </a>
-        </div>
-        <ul class="nav-link flexed-item">
-          <li class="nav-item animated-link">
-            <a href="">Collection</a>
-          </li>
-          {{#if isLoggedIn}}
-          <li class="nav-item animated-link nav-item-admin">
-            <a href="">Add Photographer</a>
-          </li>
-           <li class="nav-item animated-link nav-item-admin">
-            <a href="">Manage Photographer</a>
-          </li>
-          {{/if}}
-        </ul>
-      </div>
-      <div class="flexed-item nav-end">
-        {{#unless isLoggedIn}}
-        <a  href="/auth/signin" id="nav_login" class="button-ternary flexed-item nav-end-item">
-          <span class="btn-text">Sign in</span>
-        </a>
-        {{/unless}}
-        {{#if isLoggedIn}}
-        <a  href="/auth/signout" id="nav_logout" class="button-ternary flexed-item nav-end-item">
-          <span class="btn-text">Sign out</span>
-        </a>
-        {{/if}}
-      </div>
-    </nav>
-  </header>
-</div> --}}

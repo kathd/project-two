@@ -1,3 +1,21 @@
+/* 
+button color (brick): #B62A3D
+*/
+
+/* === LOGO === */
+.middle-logo {
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.middle-logo a {
+    text-decoration: none;
+    color: #000;
+}
+
 /* === FORM === */
 
 #form {
@@ -6,9 +24,9 @@
 }
 
 #form label {
-    color: #666;
+    color: #000;
     display: inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     text-align: center;
     width: 100%;
 }
@@ -16,31 +34,32 @@
 #form input,
 #form button {
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 16px;
     outline: 0;
-    padding: 4px;
+    padding: 10px;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 #form button {
-    background: #43a3e6;
-    border: 1px solid #43a3e6;
-    border-radius: 4px;
+    background: #B62A3D;
+    border: 1px solid #B62A3D;
+    border-radius: 25px;
     color: #fff;
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
-    padding: 8px 16px;
+    padding: 16px 16px;
     text-decoration: none;
     text-transform: uppercase;
     transition: .3s ease background;
     width: 100%;
+    margin-top: 10px;
 }
 
 #form button:hover {
     background: #fff;
-    color: #43a3e6;
+    color: #B62A3D;
     transition: .3s ease background;
 }
 

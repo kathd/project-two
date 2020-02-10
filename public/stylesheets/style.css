@@ -1,3 +1,7 @@
+/* 
+Brick color: #B62A3D
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -5,12 +9,12 @@
 }
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Varela Round', sans-serif;
   height: 100vh;
 }
 
 a {
-  color: #00B7FF;
+  color: #B62A3D;
 }
 
 /* NAV BAR */

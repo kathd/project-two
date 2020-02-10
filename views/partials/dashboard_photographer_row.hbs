@@ -8,6 +8,13 @@
   <div>{{this.description}}</div>
 </td>
 <td class="table-division">
+  <div>
+    {{#each this.categories}}
+    <li>{{this}}</li>
+    {{/each}}
+  </div>
+</td>
+<td class="table-division">
   <div>${{this.price}}</div>
 </td>
 <td class="table-division">

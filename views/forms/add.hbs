@@ -1,6 +1,6 @@
 <h1> Add photographer</h1>
 <div class="form-container">
-    <form id="form" action="/forms/add" method="POST">
+    <form id="form" action="/photographers/add" method="POST">
         <label for="name">Name</label><br>
         <input type="text" name="name" placeholder="Name">
 
@@ -9,12 +9,22 @@
 
         <label for="price">Price</label><br>
         <input type="number" name="price" placeholder="700">
-        
-        <label for="location"> Please select your location</label><br>
-          <input type="radio" name="location" value="Paris"> Paris<br>
-          <input type="radio" name="location" value="London"> London<br>
-          <input type="radio" name="location" value="Berlin"> Berlin<br> 
 
+        <label for="location"> Please select your location</label><br>
+          <input type="radio" name="categories" value="Paris"> Paris<br>
+          <input type="radio" name="categories" value="London"> London<br>
+          <input type="radio" name="categories" value="Berlin"> Berlin<br> 
+        
+        <label for="categories"> Please select yours specialties</label><br>
+          <input type="checkbox" name="categories" value="Events"> Events
+          <input type="checkbox" name="categories" value="lifestyle"> Lifestyle
+          <input type="checkbox" name="categories" value="real estate"> Real estate
+          <input type="checkbox" name="categories" value="Portrait">Portrait
+          <input type="checkbox" name="categories" value="real estate"> Packshots and still life
+          <input type="checkbox" name="categories" value="Food"> Food
+          <input type="checkbox" name="categories" value="Mode"> Mode
+          <input type="checkbox" name="categories" value="Advertising"> Advertising
+         
         <label for="email">Email</label><br>
         <input type="email" name="email" placeholder="johndoe@gmail.com">
         <button type="submit">Create photographer</button>

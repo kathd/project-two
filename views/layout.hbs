@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/auth-form.css' />
   </head>
   <body>
-    {{> navMain}}
-    {{{body}}}
+      {{#unless noNav}}
+        {{> navMain}}
+      {{/unless}}
+      {{{body}}}
   </body>
 </html>

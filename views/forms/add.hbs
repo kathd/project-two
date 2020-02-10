@@ -1,73 +1,76 @@
 <div class="pages">
-  <div class="page-title"><h1>Add Photographer</h1></div>
+  <div class="page-title">
+    <h1>Add Photographer</h1>
+  </div>
   <div class="form-container">
     <form class="add-form" action="/photographers/add" method="POST">
       <label for="name">Name</label>
       <input type="text" name="name" placeholder="Name">
 
+      <label for="email">Email</label>
+      <input type="email" name="email" placeholder="johndoe@gmail.com">
+
       <label for="description">Description</label>
-      <textarea type="text" name="description" placeholder="Blablabla"></textarea>
+      <textarea type="text" name="description" placeholder="Description"></textarea>
 
       <label for="price">Price</label>
       <input type="number" name="price" placeholder="700">
 
-      <h4>Select location</h4>
+      <label for="location">Location</label>
+      
       <div class="select-location">
-        <span>
-          <input id="location1" type="radio" name="location" value="Paris">
-          <label for="location1">Paris</label>
-        </span>
-        <span>
-          <input id="location2" type="radio" name="location" value="London">
-          <label for="location2">London</label>
-        </span>
-        <span>
-          <input id="location3" type="radio" name="location" value="Berlin">
-          <label for="location3">Berlin</label>
-        </span>
+        <select id="location" name="location">
+          <option value="Paris">Paris</option>
+          <option value="London">London</option>
+          <option value="Berlin">Berlin</option>
+        </select>
       </div>
-      
-      <p>Select specialties</p>
-      <div class="select-specialties"></div>
-        <span>
+
+      <p>Specialties</p>
+      <div class="select-specialties">
+        <label class="specialty-box" for="events">Events
           <input type="checkbox" id="events" name="categories" value="events">
-          <label for="events">Events</label>
-        </span>
-        <span>
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="specialty-box" for="lifestyle">Lifestyle
           <input type="checkbox" id="lifestyle" name="categories" value="lifestyle">
-          <label for="lifestyle">Lifestyle</label>
-        </span>
-        <span>
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="specialty-box" for="real-estate">Real Estate
           <input type="checkbox" id="real-estate" name="categories" value="real estate">
-          <label for="real-estate">Real Estate</label>
-        </span>
-        <span>
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="specialty-box" for="portrait">Portrait
           <input type="checkbox" id="portrait" name="categories" value="portrait">
-          <label for="portrait">Portrait</label>
-        </span>
-        <span>
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="specialty-box" for="packshots">Packshots and Still Life
           <input type="checkbox" id="packshots" name="categories" value="packshots">
-          <label for="packshots">Packshots and Still Life</label>
-        </span>
-        <span>
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="specialty-box" for="food">Food
           <input type="checkbox" id="food" name="categories" value="food">
-          <label for="food">Food</label>
-        </span>
-        <span>
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="specialty-box" for="fashion">Fashion
           <input type="checkbox" id="fashion" name="categories" value="fashion">
-          <label for="fashion">Fashion</label>
-        </span>
-        <span>
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="specialty-box" for="advertising">Advertising
           <input type="checkbox" id="advertising" name="categories" value="advertising">
-          <label for="advertising">Advertising</label>
-        </span>
+          <span class="checkmark"></span>
+        </label>
       </div>
-      
-      <label for="email">Email</label>
-      <input type="email" name="email" placeholder="johndoe@gmail.com">
-      
       
       <button type="submit">Add Photographer</button>
+  
     </form>
 
     <div class="error-container">
@@ -75,7 +78,6 @@
       <span class="error-message">{{error}}</span>
       {{/if}}
     </div>
+
   </div>
-
-
 </div>

@@ -40,17 +40,6 @@ app.use(
   })
 );
 
-
-
-
-
-
-
-
-
-
-
-
 // ROUTES
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');

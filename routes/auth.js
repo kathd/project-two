@@ -89,7 +89,7 @@ router.post("/signin", (req, res, next) => {
 //SIGN OUT
 router.get("/signout", (req, res) => {
   req.session.destroy(() => {
-    res.redirect("/auth/signin");
+    res.redirect("/");
   });
 });
 

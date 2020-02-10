@@ -46,5 +46,49 @@ router.post("/signup", uploader.single("avatar"), (req, res, next) => {
 });
 
 
+//SIGN IN WITH ACCOUNT
+router.post("/signin", (req, res, next) => {
+  const user = req.body;
+
+  if (!user.email || !user.password) {
+    // one or more field is missing
+    //PUT ERROR MSG
+    return res.redirect("/auth/signin");
+  }
+
+  userModel
+    .findOne({ email: user.email })
+    .then(dbRes => {
+      if (!dbRes) {
+        // no user found with this email
+        //ERROR MSG "Wrong email/password"
+        return res.redirect("/auth/signin");
+      }
+      // user has been found in DB !
+      if (bcrypt.compareSync(user.password, dbRes.password)) {
+        // encryption says : password match success
+        const { _doc: clone } = { ...dbRes }; // make a clone of db user
+
+        delete clone.password; // remove password from clone
+        // console.log(clone);
+
+        req.session.currentUser = clone; // user is now in session... until session.destroy
+        return res.redirect("/");
+      } else {
+        // encrypted password match failed
+        //ERROR MSG "Wrong email/password"
+        return res.redirect("/auth/signin");
+      }
+    })
+    .catch(next);
+});
+
+
+//SIGN OUT
+router.get("/signout", (req, res) => {
+  req.session.destroy(() => {
+    res.redirect("/auth/signin");
+  });
+});
 
 module.exports = router;

@@ -3,7 +3,7 @@ button color (brick): #B62A3D
 */
 
 
-.manage-photographer-wrapper {
+.manage-container {
     display: flex;
     flex-direction: column;
     margin-top: 10%;
@@ -11,7 +11,7 @@ button color (brick): #B62A3D
     align-items: center;
 }
 
-.manage-photographers-title {
+.manage-title {
     margin: 20px;
     font-size: 2em;
 }
@@ -82,9 +82,11 @@ button color (brick): #B62A3D
     justify-content: center;
 }
 
-.td-profile > :first-child {
-    margin-bottom: 20px;
+.td-profile > a {
+    margin: 20px;
 }
+
+
 
 .td-details {
     display: flex;
@@ -112,6 +114,7 @@ button color (brick): #B62A3D
     height: 150px;
     object-fit: cover;
     border-radius: 50%;
+    margin-bottom: 20px;
 }
 
 .categories{

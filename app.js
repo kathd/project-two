@@ -11,6 +11,8 @@ var cookieParser = require('cookie-parser');
 var session = require("express-session")
 const mongoose = require('mongoose');
 const MongoStore = require("connect-mongo")(session);
+var bodyParser = require('body-parser')
+
 
 
 const app = express();
@@ -23,6 +25,7 @@ hbs.registerPartials(path.join(__dirname, "/views/partials"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
+app.use(bodyParser.json())
 
 hbs.registerPartials(path.join(__dirname, "views/partials"))
 

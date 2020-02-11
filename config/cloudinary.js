@@ -12,7 +12,8 @@ cloudinary.config({
 // uploading the file to yopurt cloudinary account
 const storage = cloudinaryStorage({
   cloudinary,
-  folder: "user-pictures"
+  folder: "user-pictures",
+  html : {multiple :1}
   // params below is only needed if uploading media types other than images (video, audio...)
   // params: {
   //     ressource_type: "raw"

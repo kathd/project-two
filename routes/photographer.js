@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const photographerModel = require("../models/Photographer");
+const uploadCloud = require("./../config/cloudinary")
 
 
 // Display all photographer 
@@ -19,14 +20,17 @@ router.get('/add', (req, res)=> {
     res.render('forms/add');
 })
 
-router.post('/add', (req, res)=> {
-  const {name, description, price, location, email, profile_picture, portfolio, categories }  = req.body
+router.post('/add', uploadCloud.array('portfolio'), (req, res)=> {
+    console.log(req.files);
+    const files = req.files;
+    let portfolio = [];
+    files.map(file => portfolio.push(file.url));
+  const {name,   description, price, location, email, profil_pictures, categories }  = req.body;
     photographerModel
     .create({name, description, price, location, email, profile_picture, portfolio, categories })
     .then(dbRes => res.redirect("/photographers"))
     .catch(dbErr => {
       console.log(dbErr);
-     res.render('forms/add');
 })
 })
 

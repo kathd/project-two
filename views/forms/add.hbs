@@ -3,7 +3,7 @@
     <h1>Add Photographer</h1>
   </div>
   <div class="form-container">
-    <form class="photog-form" action="/photographers/add" method="POST">
+    <form class="photog-form" action="/photographers/add" method="POST" enctype="multipart/form-data">
       <label for="name">Name</label>
       <input type="text" name="name" placeholder="Name">
 
@@ -68,6 +68,10 @@
           <span class="checkmark"></span>
         </label>
       </div>
+
+
+       <label for="portfolio">Portfolio</label>
+        <input id="input-file" type="file"  name="portfolio" multiple>
       
       <button type="submit">Add Photographer</button>
   

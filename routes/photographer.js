@@ -11,8 +11,7 @@ router.get('/', (req, res) => {
     .find()
     .then(photographers => {
         res.render('show-all', {photographers})
-    .catch(error => console.log(error));
-    })
+    }).catch(error => console.log(error));
 })
 
 

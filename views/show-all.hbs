@@ -22,10 +22,7 @@
 
                     <div class="photographers-infos">
                         <div class="pp">
-                            {{#unless this.profile_picture}}
-                            <img src="/images/id-card-512.png">
-                            {{/unless}}
-                            <img src="{{this.profile_picture}}">
+                            <img class="tete" src="{{this.profile_picture}}">
                         </div>
                         <div class="text-profile">
                             <p>{{this.name}}</p>

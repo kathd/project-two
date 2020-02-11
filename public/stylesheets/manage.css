@@ -1,0 +1,19 @@
+.manage-photographer-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.manage-photographers-title{
+    margin: 20px;
+    font-size: 2em;
+}
+
+.table-head{
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+

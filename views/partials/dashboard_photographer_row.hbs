@@ -1,14 +1,14 @@
 <td class="table-division">
-  <div><img src="{{this.profile_picture}}" alt="img" class="table-image" /></div>
+  <div><img class="row-pic" src="{{this.profile_picture}}" alt="img" class="table-image" /></div>
 </td>
 <td class="table-division">
   <div>{{this.name}}</div>
 </td>
 <td class="table-division">
-  <div>{{this.description}}</div>
+  <div class="description">{{this.description}}</div>
 </td>
 <td class="table-division">
-  <div>
+  <div class="categories">
     {{#each this.categories}}
     <li>{{this}}</li>
     {{/each}}

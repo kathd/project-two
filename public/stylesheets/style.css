@@ -28,7 +28,7 @@ a {
   padding: 18px 40px;
 }
 
-/* #nav-main a {
+#nav-main a {
   text-decoration: none;
   color: #000;
 }
@@ -36,7 +36,7 @@ a {
 #nav-main a:hover {
   color: #B62A3D;
   cursor: pointer;
-} */
+}
 
 
 .left-nav {
@@ -59,8 +59,7 @@ a {
 }
 
 .center-nav img {
-  height: auto;
-  width: 100%;
+  width: 200px;
 }
 
 .right-nav {
@@ -168,7 +167,7 @@ a {
 /* ===== OTHER PAGES ===== */
 
 .pages {
-  margin-top: 10%;
+  margin: 10% 0;
   padding: 0 40px;
 }
 

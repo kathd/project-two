@@ -80,6 +80,7 @@ button color (brick): #B62A3D
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    padding: 10px;
 }
 
 .td-profile > a {

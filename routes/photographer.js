@@ -25,7 +25,7 @@ router.post('/add', uploadCloud.array('portfolio'), (req, res)=> {
     const files = req.files;
     let portfolio = [];
     files.map(file => portfolio.push(file.url));
-  const {name,   description, price, location, email, profil_pictures, categories }  = req.body;
+  const {name,   description, price, location, email, profile_picture, categories }  = req.body;
     photographerModel
     .create({name, description, price, location, email, profile_picture, portfolio, categories })
     .then(dbRes => res.redirect("/photographers"))

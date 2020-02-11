@@ -6,17 +6,18 @@
         <div><p>Price starts at {{photographer.price}} euros per day</p></div>
         <div><p>Located at {{photographer.location}}</p></div>
         <div>
-            {{!-- <p>Book at {{photographer.email}}</p> --}}
+            {{#if isLoggedIn}}
             <form action="mailto:{{photographer.email}}" method="post" enctype="text/plain">
                 <input type="submit" value="BOOK">
             </form>
+            {{/if}}
         </div>
     </div>
     
     <div class-"each-portfolio">
         {{#each photographer.portfolio}}
-        <img src="{{this}}">
-        {{/each}} 
+        <img class="each-photo" src={{this}}>
+        {{/each}}
     </div>
     
 </div>

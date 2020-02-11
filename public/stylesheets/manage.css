@@ -109,7 +109,9 @@ button color (brick): #B62A3D
 .row-pic{
     height: auto;
     width: 50px;
-    border-radius: 20%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .categories{

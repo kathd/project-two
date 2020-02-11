@@ -25,8 +25,10 @@ const photographerSchema = new Schema({
         type : [String]
     } ,
     portfolio: [String],
-    categories: [String],
-
+    categories: {
+        type: [String],
+        enum: ["events", "lifestyle", "real estate", "portrait", "packshots", "food", "fashion", "advertising"]
+    }
 });
 
 const Photographer = mongoose.model("Photographer", photographerSchema);

@@ -1,25 +1,29 @@
-<td class="table-division">
-  <div><img class="row-pic" src="{{this.profile_picture}}" alt="img" class="table-image" /></div>
+<td class="manage-td">
+  <div class="td-profile">
+    <a href="/photographers/{{this._id}}">{{this.name}}</a>
+    <img class="row-pic" src={{this.profile_picture}} alt={{this.name}} class="table-image" />
+  </div>
 </td>
-<td class="table-division">
-  <div><a href="/photographers/{{this._id}}">{{this.name}}</a></div>
-</td>
-<td class="table-division">
+<td class="manage-td">
   <div class="description">{{this.description}}</div>
 </td>
-<td class="table-division">
+<td class="manage-td">
   <div class="categories-list">
     {{#each this.categories}}
     <li>{{this}}</li>
     {{/each}}
   </div>
 </td>
-<td class="table-division">
-  <div>{{this.price}} EUR</div>
+<td class="manage-td">
+  <div class="td-details">
+    <div class="td-price">Price starts @ {{this.price}} EUR / day</div>
+    <div class="td-location">Located in <b>{{this.location}}</b></div>
+    <div class="td-email"><u>Email</u>: {{this.email}}</div>
+  </div>
 </td>
-<td class="table-division">
-  <a href="/photographers/{{this._id}}/edit" data-id-photographer="{{this._id}}"><i class="fa fa-edit table-icon"></i></a>
+<td class="manage-td">
+  <a href="/photographers/{{this._id}}/edit" data-id-photographer="{{this._id}}"><i class="fa fa-lg fa-edit table-icon"></i></a>
 </td>
-<td class="table-division">
-  <a href="/photographers/{{this._id}}/delete" data-id-sneaker="{{this._id}}"  aria-hidden="true"><i class="fa fa-trash table-icon"></i></a> 
+<td class="manage-td">
+  <a href="/photographers/{{this._id}}/delete" data-id-sneaker="{{this._id}}"  aria-hidden="true"><i class="fa fa-lg fa-trash table-icon"></i></a> 
 </td>

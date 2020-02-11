@@ -1,0 +1,36 @@
+.photog-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.photog-info div {
+    margin: 10px;
+}
+
+.each-profile-pic {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #B62A3D;
+}
+
+input[type=submit] {
+    color: #fff;
+    font-size: 16px;
+    background-color: #B62A3D;
+    border: 1px solid #B62A3D;
+    border-radius: 10px;
+    padding: 10px 30px;
+}
+
+input[type=submit]:hover {
+    background-color: #fff;
+    color: #B62A3D;
+}
+
+.each-photo {
+    width:30%;
+}

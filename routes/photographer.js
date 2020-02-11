@@ -17,7 +17,9 @@ router.get('/', (req, res) => {
 
 
 router.get('/add', (req, res)=> {
-    res.render('forms/add');
+    res.render('forms/add', {
+        css: ['photog-form.css']
+    });
 })
 
 router.post('/add', (req, res)=> {
@@ -41,7 +43,10 @@ router.get("/manage", (req, res, next)=> {
     photographerModel
     .find()
     .then(photographers => {
-        res.render("manage-all", {photographers});
+        res.render("manage-all", {
+            photographers,
+            css: ['manage.css']
+        });
     })
     .catch(dbErr => console.error("OH no, db err :", dbErr))
     })
@@ -50,7 +55,10 @@ router.get("/:id", (req, res, next ) => {
     photographerModel
     .findById(req.params.id)
     .then(photographer => { 
-        res.render("show-each", { photographer });
+        res.render("show-each", {
+            photographer,
+            css: ['show-each.css']
+        });
     })
     .catch(dbErr => console.error("OH no, db err :", dbErr));
 })
@@ -60,7 +68,7 @@ router.get("/:id/delete", (req, res, next) => {
     photographerModel
     .findByIdAndDelete(req.params.id)
     .then(dbRes => {
-        res.redirect("/");
+        res.redirect("/photographers/manage");
     })
     .catch(dbErr => console.error("OH no, db err :", dbErr));
 })
@@ -70,7 +78,8 @@ router.get("/:id/edit", (req, res, next) => {
     .findById(req.params.id)
     .then(dbRes => {
       res.render("forms/editph", { 
-          photographer: dbRes 
+          photographer: dbRes ,
+          css: ['photog-form.css']
         });
     console.log(dbRes)
     })

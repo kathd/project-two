@@ -7,12 +7,18 @@ const uploader = require("./../config/cloudinary");
 //VIEW FORM SIGNIN/UP
 router.get("/signup", (req, res) => {
   const noNav = true
-  res.render("auth/signup", {noNav});
+  res.render("auth/signup", {
+    noNav,
+    css: ['auth-form.css']
+  });
 });
 
 router.get("/signin", (req, res) => {
   const noNav = true
-  res.render("auth/signin", {noNav});
+  res.render("auth/signin", {
+    noNav,
+    css: ['auth-form.css']
+  });
 });
 
 

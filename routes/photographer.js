@@ -10,11 +10,9 @@ router.get('/', (req, res) => {
     photographerModel
     .find()
     .then(photographers => {
-        res.render('show-all', {
-            photographers
-        })
+        res.render('show-all', {photographers})
+    .catch(error => console.log(error));
     })
-    .catch(error => error);
 })
 
 
@@ -24,12 +22,13 @@ router.get('/add', (req, res)=> {
     });
 })
 
-router.post('/add', uploadCloud.array('portfolio'), (req, res)=> {
+router.post('/add', (req, res)=> {
     // console.log(req.files);
-    const files = req.files;
-    let portfolio = [];
-    files.map(file => portfolio.push(file.url));
-  const {name,   description, price, location, email, profile_picture, categories }  = req.body;
+    // const files = req.files;
+    
+    // files.map(file => portfolio.push(file.url));
+    console.log(req.body)
+  const {name,   description, price, location, email,  profile_picture, portfolio, categories }  = req.body;
     photographerModel
     .create({name, description, price, location, email, profile_picture, portfolio, categories })
     .then(dbRes => res.redirect("/photographers"))
@@ -37,6 +36,7 @@ router.post('/add', uploadCloud.array('portfolio'), (req, res)=> {
       console.log(dbErr);
     })
 })
+
 
 
 router.get("/manage", (req, res, next)=> {

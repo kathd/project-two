@@ -1,36 +1,8 @@
-<div class="pages content">
-    <h2 id="all-our-ph">All our photographers</h2>
-    <div class="global-container">
-        <div class="search-container">
-
-            <div class="form-container">
-                <h3>Search a photographer</h3>
-                <form id="form" action="/photographers/add" method="POST">
-                    <label for="name">Name</label><br>
-                    <input type="text" name="name" placeholder="Name">
-
-                    <label for="price">Price</label><br>
-                    <input type="number" name="price" placeholder="700">
-
-                    <label for="location"> Please select your location</label><br>
-                    <input type="radio" name="categories" value="Paris"> Paris<br>
-                    <input type="radio" name="categories" value="London"> London<br>
-                    <input type="radio" name="categories" value="Berlin"> Berlin<br>
-
-                    <label for="categories"> Please select yours specialties</label><br>
-                    <input type="checkbox" name="categories" value="Events"> Events
-                    <input type="checkbox" name="categories" value="lifestyle"> Lifestyle
-                    <input type="checkbox" name="categories" value="real estate"> Real estate
-                    <input type="checkbox" name="categories" value="Portrait">Portrait
-                    <input type="checkbox" name="categories" value="real estate"> Packshots and still life
-                    <input type="checkbox" name="categories" value="Food"> Food
-                    <input type="checkbox" name="categories" value="Mode"> Mode
-                    <input type="checkbox" name="categories" value="Advertising"> Advertising
-
-                    <button type="submit">Find</button>
-
-                </form>
-            </div>
+<div class="pages">
+    <h2>All our photographers</h2>
+        <div class="form-container">
+            <h3>Search a photographer</h3>
+                
         </div>
         <div class="photographer-found">
             {{#unless photographers}}
@@ -39,12 +11,15 @@
 
             {{#each photographers}}
             <div class="photographer-block">
+                {{!-- portfolio layout --}}
                 <div class="portfolio-block">
                     <img class="img-portfolio" src="{{this.portfolio.[0]}}">
                     <img class="img-portfolio" src="{{this.portfolio.[1]}}">
                     <img class="img-portfolio" src="{{this.portfolio.[2]}}">
                     <img class="img-portfolio" src="{{this.portfolio.[3]}}">
                 </div>
+
+                
                 <div class="name-pic">
                     <img class="profil-pic" src="{{this.profile_picture}}">
                     <h3 class="name">{{this.name}}</h3>

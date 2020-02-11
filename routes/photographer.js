@@ -11,8 +11,8 @@ router.get('/', (req, res) => {
     .find()
     .then(photographers => {
         res.render('show-all', {photographers})
-    .catch(error => console.log(error));
     })
+    .catch(error => console.log(error));
 })
 
 
@@ -31,7 +31,7 @@ router.post('/add', uploadCloud.array('portfolio'), (req, res)=> {
     .then(dbRes => res.redirect("/photographers"))
     .catch(dbErr => {
       console.log(dbErr);
-})
+    })
 })
 
 

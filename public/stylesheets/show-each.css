@@ -1,0 +1,23 @@
+.photog-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.photog-info div {
+    margin: 10px;
+}
+
+input[type=submit] {
+    color: #fff;
+    font-size: 16px;
+    background-color: #B62A3D;
+    border: 1px solid #B62A3D;
+    border-radius: 10px;
+    padding: 10px 30px;
+}
+
+input[type=submit]:hover {
+    background-color: #fff;
+    color: #B62A3D;
+}

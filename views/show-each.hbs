@@ -1,13 +1,22 @@
 <div class="pages content">
-    <h2>{{photographer.name}}</h2>
-    <img src="{{photographer.profile_picture}}">
-    <li>{{photographer.name}}</li>
-    <p>{{photographer.description}}</p>
-    <a>{{photographer.price}}</a>
-    <a>{{photographer.location}}</a>
-    <a>{{photographer.email}}</a>
-
-    {{#each photographer.portfolio}}
-    <img src="{{this}}">
-    {{/each}}
+    <div class="photog-info">
+        <div><img class="each-profile-pic" src={{photographer.profile_picture}}></div>
+        <div><h1>{{photographer.name}}</h1></div>
+        <div><p>{{photographer.description}}</p></div>
+        <div><p>Price starts at {{photographer.price}} euros per day</p></div>
+        <div><p>Located at {{photographer.location}}</p></div>
+        <div>
+            {{!-- <p>Book at {{photographer.email}}</p> --}}
+            <form action="mailto:{{photographer.email}}" method="post" enctype="text/plain">
+                <input type="submit" value="BOOK">
+            </form>
+        </div>
+    </div>
+    
+    <div class-"each-portfolio">
+        {{#each photographer.portfolio}}
+        <img src="{{this}}">
+        {{/each}} 
+    </div>
+    
 </div>

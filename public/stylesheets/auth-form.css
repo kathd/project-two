@@ -16,6 +16,10 @@ button color (brick): #B62A3D
     color: #000;
 }
 
+.middle-logo img {
+    width: 300px;
+}
+
 /* === FORM === */
 
 .form {

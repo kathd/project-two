@@ -28,7 +28,7 @@ a {
   padding: 18px 40px;
 }
 
-#nav-main a {
+/* #nav-main a {
   text-decoration: none;
   color: #000;
 }
@@ -36,7 +36,8 @@ a {
 #nav-main a:hover {
   color: #B62A3D;
   cursor: pointer;
-}
+} */
+
 
 .left-nav {
   width: 25%;
@@ -55,6 +56,11 @@ a {
   width: 50%;
   display: flex;
   justify-content: center;
+}
+
+.center-nav img {
+  height: auto;
+  width: 100%;
 }
 
 .right-nav {

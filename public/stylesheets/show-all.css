@@ -1,1 +1,54 @@
+#profile-container {
+    display: flex;
+    justify-content: space-evenly;
+}
 
+#all-photographers{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    margin: 60px auto;
+}
+
+.photographer-profile{
+    border: solid 0.5px black;
+    width: 60%;
+    margin: 40px auto;
+}
+
+.portfolio-block{
+    width: 50%;
+    padding: 10px;
+    background-color: blue;
+    break-inside: avoid;
+    position: relative;
+    columns: 2;
+    margin: 10px auto;
+}
+
+.img-portfolio{
+    max-width: 100%;
+    
+}
+
+.photographers-infos {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.pp {
+    width: 180px;
+    height: 180px;
+}
+
+.pp img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width : 1024px) {
+    #all-photographers {
+        grid-template-columns: 1fr;
+    }
+}

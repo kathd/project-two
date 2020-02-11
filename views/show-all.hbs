@@ -1,41 +1,41 @@
 <div class="pages">
     <h2>All our photographers</h2>
-        <div class="form-container">
-            <h3>Search a photographer</h3>
-                
-        </div>
-        <div class="photographer-found">
-            {{#unless photographers}}
-            <a>sorry not photographers yet!</a>
-            {{/unless}}
-
-            {{#each photographers}}
-            <div class="photographer-block">
-                {{!-- portfolio layout --}}
-                <div class="portfolio-block">
-                    <img class="img-portfolio" src="{{this.portfolio.[0]}}">
-                    <img class="img-portfolio" src="{{this.portfolio.[1]}}">
-                    <img class="img-portfolio" src="{{this.portfolio.[2]}}">
-                    <img class="img-portfolio" src="{{this.portfolio.[3]}}">
-                </div>
-
-                
-                <div class="name-pic">
-                    <img class="profil-pic" src="{{this.profile_picture}}">
-                    <h3 class="name">{{this.name}}</h3>
-                </div>
-                <br>
-                <div class="basic-info">
-                    <div>Daily rates :{{this.price}}€</div>
-                    <div>City :{{this.location}}</div>
-                    <div>mail :{{this.email}}</div>
-                </div>
-                <br>
-
+        <div id="profile-container">
+            <div class="form-container">
+                <p>Search a photographer</p>
+                    
             </div>
+            <div id="all-photographers">
 
+                {{#unless photographers}}
+                <a>sorry not photographers yet!</a>
+                {{/unless}}
+                {{#each photographers}}
+                <div class="photographer-profile">
+                    {{!-- portfolio layout --}}
+                    <div class="portfolio-block">
+                        <img class="img-portfolio" src="{{this.portfolio.[0]}}">
+                        <img class="img-portfolio" src="{{this.portfolio.[1]}}">
+                        <img class="img-portfolio" src="{{this.portfolio.[2]}}">
+                        <img class="img-portfolio" src="{{this.portfolio.[3]}}">
+                    </div>
 
-            {{/each}}
+                    <div class="photographers-infos">
+                        <div class="pp">
+                            {{#unless this.profile_picture}}
+                            <img src="/images/id-card-512.png">
+                            {{/unless}}
+                            <img src="{{this.profile_picture}}">
+                        </div>
+                        <div class="text-profile">
+                            <p>{{this.name}}</p>
+                            <p>{{this.price}}€ per day</p>
+                            <p>Based in {{this.location}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
         </div>
     </div>
 

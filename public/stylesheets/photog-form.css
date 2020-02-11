@@ -11,12 +11,12 @@ button color (brick): #B62A3D
 
 /* === FORM === */
 
-.add-form {
+.photog-form {
     margin: 30px auto;
     width: 380px;
 }
 
-.add-form label {
+.photog-form label {
     color: #000;
     display: inline-block;
     margin-bottom: 8px;
@@ -24,12 +24,12 @@ button color (brick): #B62A3D
     width: 100%;
 }
 
-.add-form input[type=text],
-.add-form input[type=number],
-.add-form input[type=email],
-.add-form textarea,
-.add-form select,
-.add-form button {
+.photog-form input[type=text],
+.photog-form input[type=number],
+.photog-form input[type=email],
+.photog-form textarea,
+.photog-form select,
+.photog-form button {
     box-sizing: border-box;
     font-size: 14px;
     outline: 0;
@@ -38,13 +38,13 @@ button color (brick): #B62A3D
     margin-bottom: 15px;
 }
 
-.add-form textarea {
+.photog-form textarea {
     width: 100%;
     height: 70px;
     resize: none;
 }
 
-.add-form button {
+.photog-form button {
     background: #B62A3D;
     border: 1px solid #B62A3D;
     border-radius: 25px;
@@ -60,7 +60,7 @@ button color (brick): #B62A3D
     margin-top: 10px;
 }
 
-.add-form button:hover {
+.photog-form button:hover {
     background: #fff;
     color: #B62A3D;
     transition: .3s ease background;

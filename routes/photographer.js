@@ -50,9 +50,6 @@ router.get("/:id", (req, res, next ) => {
 })
 
 
-
-
-
 router.get("/:id/delete", (req, res, next) => {
     photographerModel
     .findByIdAndDelete(req.params.id)

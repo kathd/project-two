@@ -1,29 +1,82 @@
-<h1> Edit photographer</h1>
-<div class="form-container">
-    <form id="form" action="/photographers/{{photographer._id}}/edit" method="POST">
-        <label for="name">Name</label>
-        <input type="text" name="name" placeholder="Name" value="{{photographer.name}}"><br>
+<div class="pages content">
+  <div class="page-title">
+    <h1>Edit Photographer</h1>
+  </div>
+  <div class="form-container">
+    <form class="photog-form" action="/photographers//{{photographer._id}}/edit" method="POST">
+      <label for="name">Name</label>
+      <input type="text" name="name" placeholder="Name" value="{{photographer.name}}">
 
-        <label for="description">Description</label>
-        <textarea type="text" name="description" placeholder="Blablabla" >{{photographer.description}}</textarea><br>
-        <br>
-        <label for="price">Price</label>
-        <input type="number" name="price" placeholder="700" value="{{photographer.price}}"><br>
-        <br>
-        <br>
-        <label for="location"> Please select your location</label><br>
-          <input type="radio" name="location" value="Paris"> Paris<br>
-          <input type="radio" name="location" value="London"> London<br>
-          <input type="radio" name="location" value="Berlin"> Berlin<br> 
+      <label for="email">Email</label>
+      <input type="email" name="email" placeholder="johndoe@gmail.com" value="{{photographer.email}}">
 
-        <label for="email">Email</label>
-        <input type="email" name="email" placeholder="johndoe@gmail.com" value="{{photographer.email}}"><br>
-        <button type="submit">Edit photographer</button>
-        
+      <label for="description">Description</label>
+      <textarea type="text" name="description" placeholder="Description">{{photographer.description}}</textarea>
+
+      <label for="price">Price</label>
+      <input type="number" name="price" placeholder="700" value="{{photographer.price}}">
+
+      <label for="location">Location</label>
+      <div class="select-location">
+        <select id="location" name="location" value="{{photographer.location}}">
+          <option value="Paris">Paris</option>
+          <option value="London">London</option>
+          <option value="Berlin">Berlin</option>
+        </select>
+      </div>
+
+      <p>Specialties</p>
+      <div class="select-specialties">
+        <label class="specialty-box" for="events">Events
+          <input type="checkbox" id="events" name="categories" value="events">
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="specialty-box" for="lifestyle">Lifestyle
+          <input type="checkbox" id="lifestyle" name="categories" value="lifestyle">
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="specialty-box" for="real-estate">Real Estate
+          <input type="checkbox" id="real-estate" name="categories" value="real estate">
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="specialty-box" for="portrait">Portrait
+          <input type="checkbox" id="portrait" name="categories" value="portrait">
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="specialty-box" for="packshots">Packshots and Still Life
+          <input type="checkbox" id="packshots" name="categories" value="packshots">
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="specialty-box" for="food">Food
+          <input type="checkbox" id="food" name="categories" value="food">
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="specialty-box" for="fashion">Fashion
+          <input type="checkbox" id="fashion" name="categories" value="fashion">
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="specialty-box" for="advertising">Advertising
+          <input type="checkbox" id="advertising" name="categories" value="advertising">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      
+      <button type="submit">Update Photographer</button>
+  
     </form>
+
     <div class="error-container">
-        {{#if error}}
-        <span class="error-message">{{error}}</span>
-        {{/if}}
+      {{#if error}}
+      <span class="error-message">{{error}}</span>
+      {{/if}}
     </div>
+
+  </div>
 </div>

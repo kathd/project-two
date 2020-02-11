@@ -5,13 +5,17 @@
   <table class="manage-table">
     <thead>
       <tr class="table-row">
-        <th class="table-head">Picture</th>
-        <th class="table-head">Photographer Name</th>
+        <th class="table-head">Photographer</th>
         <th class="table-head">Description</th>
         <th class="table-head">Specialties</th>
-        <th class="table-head">Price per Day</th>
+        <th class="table-head">Other Details</th>
         <th class="table-head" >Edit</th>
         <th class="table-head">Delete</th>
+        {{!-- <th class="table-head">Picture</th>
+        <th class="table-head">Photographer Name</th>
+        <th class="table-head">Price per Day</th>
+        <th class="table-head" >Edit</th>
+        <th class="table-head">Delete</th> --}}
       </tr>
     </thead>
 
@@ -23,7 +27,7 @@
       {{/each}}
       {{#unless photographers}}
       <tr>
-        <td colspan="6">sorry no photographer yet</td>
+        <td colspan="6">Add a photographer...</td>
       </tr>
       {{/unless}}
     </tbody>

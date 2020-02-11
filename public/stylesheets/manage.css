@@ -95,3 +95,38 @@ button color (brick): #B62A3D
 .td-details div {
     margin: 10px 0;
 }
+
+/* IDK */
+
+.table-division{
+    border: solid 2px black;
+}
+
+.table-row{
+    border: solid 2px black;
+}
+
+.row-pic{
+    height: auto;
+    width: 50px;
+    border-radius: 20%;
+}
+
+.categories{
+    margin: 20px;
+}
+
+.description{
+    font-style: italic;
+    font-size: 0.8em;
+    color: gray;
+    margin: 10px;
+}
+
+.edit{
+    margin: 10px;
+}
+
+.delete{
+    margin: 10px
+}

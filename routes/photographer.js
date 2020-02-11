@@ -56,7 +56,8 @@ router.get("/:id", (req, res, next ) => {
     .findById(req.params.id)
     .then(photographer => { 
         res.render("show-each", {
-            photographer
+            photographer,
+            css: ['show-each.css']
         });
     })
     .catch(dbErr => console.error("OH no, db err :", dbErr));

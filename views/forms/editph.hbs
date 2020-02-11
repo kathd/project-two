@@ -18,54 +18,76 @@
 
       <label for="location">Location</label>
       <div class="select-location">
-        <select id="location" name="location" value="{{photographer.location}}">
-          <option value="Paris">Paris</option>
-          <option value="London">London</option>
-          <option value="Berlin">Berlin</option>
+        <select id="location" name="location">
+            {{#compare photographer.location "Paris" operator="===" }}
+            <option value="Paris" selected>Paris</option>
+            {{/compare}}
+            {{#compare photographer.location "Paris" operator="!=" }}
+            <option value="Paris">Paris</option>
+            {{/compare}}
+            {{#compare photographer.location "London" operator="===" }}
+            <option value="London" selected>London</option>
+            {{/compare}}
+            {{#compare photographer.location "London" operator="!=" }}
+            <option value="London">London</option>
+            {{/compare}}
+            {{#compare photographer.location "Berlin" operator="===" }}
+            <option value="Berlin" selected>Berlin</option>
+            {{/compare}}
+            {{#compare photographer.location "Berlin" operator="!=" }}
+            <option value="Berlin">Berlin</option>
+            {{/compare}}
         </select>
       </div>
 
       <p>Specialties</p>
+
+       {{!-- <label class="specialty-box" for="events">Events
+            <input type="checkbox" id="events" name="categories" value="events" {{#applyPhotographerSpecialty photographer "foo" }}{{/applyPhotographerSpecialty}}>
+            <span class="checkmark"></span>
+        </label> --}}
+
       <div class="select-specialties">
         <label class="specialty-box" for="events">Events
-          <input type="checkbox" id="events" name="categories" value="events">
-          <span class="checkmark"></span>
+            <input type="checkbox" id="events" name="categories" value="events" {{#applyPhotographerSpecialty photographer "events" }}{{/applyPhotographerSpecialty}}>
+            <span class="checkmark"></span>
         </label>
 
         <label class="specialty-box" for="lifestyle">Lifestyle
-          <input type="checkbox" id="lifestyle" name="categories" value="lifestyle">
+            <input type="checkbox" id="lifestyle" name="categories" value="lifestyle" {{#applyPhotographerSpecialty photographer "lifestyle" }}{{/applyPhotographerSpecialty}}>
           <span class="checkmark"></span>
         </label>
 
         <label class="specialty-box" for="real-estate">Real Estate
-          <input type="checkbox" id="real-estate" name="categories" value="real estate">
+            <input type="checkbox" id="real-estate" name="categories" value="real estate" {{#applyPhotographerSpecialty photographer "real estate" }}{{/applyPhotographerSpecialty}}>
           <span class="checkmark"></span>
         </label>
 
         <label class="specialty-box" for="portrait">Portrait
-          <input type="checkbox" id="portrait" name="categories" value="portrait">
+          <input type="checkbox" id="portrait" name="categories" value="portrait" {{#applyPhotographerSpecialty photographer "portrait" }}{{/applyPhotographerSpecialty}}>
           <span class="checkmark"></span>
         </label>
 
         <label class="specialty-box" for="packshots">Packshots and Still Life
-          <input type="checkbox" id="packshots" name="categories" value="packshots">
+          <input type="checkbox" id="packshots" name="categories" value="packshots" {{#applyPhotographerSpecialty photographer "packshots" }}{{/applyPhotographerSpecialty}}>
           <span class="checkmark"></span>
         </label>
 
         <label class="specialty-box" for="food">Food
-          <input type="checkbox" id="food" name="categories" value="food">
+          <input type="checkbox" id="food" name="categories" value="food" {{#applyPhotographerSpecialty photographer "food" }}{{/applyPhotographerSpecialty}}>
           <span class="checkmark"></span>
         </label>
 
         <label class="specialty-box" for="fashion">Fashion
-          <input type="checkbox" id="fashion" name="categories" value="fashion">
+          <input type="checkbox" id="fashion" name="categories" value="fashion" {{#applyPhotographerSpecialty photographer "fashion" }}{{/applyPhotographerSpecialty}}>
           <span class="checkmark"></span>
         </label>
 
         <label class="specialty-box" for="advertising">Advertising
-          <input type="checkbox" id="advertising" name="categories" value="advertising">
+          <input type="checkbox" id="advertising" name="categories" value="advertising" {{#applyPhotographerSpecialty photographer "advertising" }}{{/applyPhotographerSpecialty}}>
           <span class="checkmark"></span>
         </label>
+
       </div>
       
       <button type="submit">Update Photographer</button>

@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("./config/dbconnect");
+require("./helpers/hbs");
 
 
 var createError = require('http-errors');

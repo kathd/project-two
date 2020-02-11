@@ -27,7 +27,7 @@ router.post('/add', uploadCloud.array('portfolio'), (req, res)=> {
     files.map(file => portfolio.push(file.url));
   const {name,   description, price, location, email, profil_pictures, categories }  = req.body;
     photographerModel
-    .create({name,   description, price, location, email, profil_pictures, portfolio, categories })
+    .create({name, description, price, location, email, profile_picture, portfolio, categories })
     .then(dbRes => res.redirect("/photographers"))
     .catch(dbErr => {
       console.log(dbErr);
@@ -67,13 +67,16 @@ router.get("/:id/edit", (req, res, next) => {
     photographerModel
     .findById(req.params.id)
     .then(dbRes => {
-      res.render("forms/editph", { photographer: dbRes });
+      res.render("forms/editph", { 
+          photographer: dbRes 
+        });
+    console.log(dbRes)
     })
     .catch(dbErr => console.error(dbErr));
 });
 
 router.post("/:id/edit", (req, res, next) => {
-    const {name,   description, price, location, email, profil_pictures, portfolio, categories }  = req.body
+    const {name, description, price, location, email, profile_picture, portfolio, categories }  = req.body
     photographerModel
     .findByIdAndUpdate(req.params.id, {
         name,  
@@ -81,7 +84,7 @@ router.post("/:id/edit", (req, res, next) => {
         price, 
         location, 
         email, 
-        profil_pictures, 
+        profile_picture, 
         portfolio, 
         categories 
     })

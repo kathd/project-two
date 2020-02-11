@@ -131,11 +131,12 @@ a {
         top: 0;
         width: 100%;
         background-color: #fff;
+        z-index: 1;
     }
       
-    .sticky + .content {
+    /* .sticky + .content {
         padding-top: 110px;
-    }
+    } */
 
 /* END >>> STICKY NAV BAR */
 
@@ -161,14 +162,6 @@ a {
 .pages {
   padding: 40px;
 }
-
-/* ===== MASONRY ===== */
-
-/* fluid 5 columns */
-.grid-sizer,
-.grid-item { width: 20%; }
-/* 2 columns */
-.grid-item--width2 { width: 40%; }
 
 
 

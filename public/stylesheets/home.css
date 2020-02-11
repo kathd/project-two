@@ -4,18 +4,17 @@
   background-image: url(../images/ben-blennerhassett-lw4jM1smaCs-unsplash.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-position: center; */
+  margin-top: 40px;
 }
 
 
 #second-part {
   padding: 20px;
-  background-color: lightgray;
 }
 
 .visual-container {
   width: 100%;
-  margin: 20px auto;
+  margin: auto;
   columns: 4;
 }
 
@@ -110,38 +109,59 @@
 
 
 /* FOOTER ABOUT DISPLAY */
-
+#about{
+  text-align: center;
+  margin-top: 50px;
+}
 
 #sub-footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+
 .profile {
   margin: 30px;
 }
 
-.pp-container{
-  text-align: center;
+.pp{
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   border: solid;
+  margin: auto;
 }
-/* .pp-container img{
-  width: 50%;
-  height: auto;
-} */
+
 
 .quote{
   text-align: center;
   font-style: oblique;
+  margin-top: 20px;
 }
 
 .creator{
-  text-align: right;
+  text-align: center;
   font-family: 'Dancing Script', cursive;
+  margin-left: 100px;
 }
 
+.network{
+  display: flex;
+  justify-content: space-evenly;
+}
+.network i {
+  font-size: 40px;
+}
+
+.favourite{
+  text-align: center;
+}
+
+.self-container{
+  display: flex;
+  justify-content: space-evenly;
+}
 .self-container img{
-  width: 40%;
+  width: 30%;
   height: auto;
 }

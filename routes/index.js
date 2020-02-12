@@ -59,7 +59,4 @@ router.post('/account/edit', uploader.single("avatar"), function(req, res, next)
   });
 });
 
-
-
-
 module.exports = router;

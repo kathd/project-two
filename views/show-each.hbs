@@ -1,10 +1,10 @@
-<div class="pages content">
+<div class="pages content profile-page">
     <div class="photog-info">
         <div><img class="each-profile-pic" src={{photographer.profile_picture}}></div>
         <div><h1>{{photographer.name}}</h1></div>
         <div><p>{{photographer.description}}</p></div>
-        <div><p>Price starts at {{photographer.price}} euros per day</p></div>
-        <div><p>Located at {{photographer.location}}</p></div>
+        <div><p>Price starts at <b class="impt">{{photographer.price}} euros</b>  per day</p></div>
+        <div><p>Located at <b class="impt">{{photographer.location}}</b></p></div>
         <div>
             {{#if isLoggedIn}}
             <form action="mailto:{{photographer.email}}" method="post" enctype="text/plain">

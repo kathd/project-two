@@ -76,9 +76,8 @@ button color (brick): #B62A3D
 }
 
 .error-message {
-    background: #F02B63;
     box-sizing: border-box;
-    color: #fff;
+    color: #F02B63;
     margin: 20px auto;
     padding: 20px;
     width: 40%;

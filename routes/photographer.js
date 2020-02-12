@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
     .then(photographers => {
         res.render('show-all', {
             photographers,
-            css : ["show-all.css"]
+            css : ["show-all.css", "filter.css"]
         })
     }).catch(error => console.log(error));
 })
@@ -32,7 +32,7 @@ router.get('/', (req, res) => {
 
 router.get('/add', (req, res)=> {
     res.render('forms/add', {
-        css: ['photog-form.css']
+        css: ['form.css']
     });
 })
 
@@ -73,9 +73,9 @@ router.get("/:id/edit",  (req, res, next) => {
     .then(dbRes => {
       res.render("forms/editph", { 
           photographer: dbRes ,
-          css: ['photog-form.css'], 
+          css: ['form.css']
         });
-    console.log(dbRes)
+    // console.log(dbRes)
     })
     .catch(dbErr => console.error(dbErr));
 });
@@ -91,7 +91,7 @@ router.post("/:id/edit", uploader.single("profile_picture"), (req, res, next) =>
         })
         .catch(dbErr => {
             console.error("OH no, db err :", dbErr) 
-            res.redirect("/")
+            res.redirect("/:id")
             
          } );
     })

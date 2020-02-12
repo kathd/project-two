@@ -1,24 +1,24 @@
 <div class="pages">
-        <h1>User Account:</h1>
     <div class="user-container">
-        <div class="user-card">
-            <img src="{{user.avatar}}" alt="{{user.firstname}}">
-            <h1>{{user.firstname}} {{user.lastname}}</h1>
-            {{#if user.company}}
-            <p class="company">{{user.company}}</p>
-            {{/if}}
-            <p>{{user.email}}</p>
-            <p><button class="btn-edit">Edit</button></p>
+        <div>
+            <h1 class="user-title">User Account:</h1>
         </div>
-        <div class="link-card">
-            <h3>You have contacted the following photographers:</h3>
-            <h1>{{user.firstname}} {{user.lastname}}</h1>
-            {{#if user.company}}
-            <p class="company">{{user.company}}</p>
-            {{/if}}
-            <p>{{user.email}}</p>
-            <p><button class="btn-edit">Edit</button></p>
-        </div>
+        <div class="cards">
+            <div class="user-card">
+                <img class="user-avatar" src="{{user.avatar}}" alt="{{user.firstname}}">
+                <h2>{{user.firstname}} {{user.lastname}}</h2>
+                {{#if user.company}}
+                <p class="company">{{user.company}}</p>
+                {{/if}}
+                <p>{{user.email}}</p>
+                <p><a class="btn-edit" href="/account/edit">Edit</a></p> 
+            </div>
+            <div class="link-card">
+                <h3>You have contacted the following photographers:</h3>
+                <div class="linked-photog-list">
+                    {{!-- booking model? --}}
+                </div>
+            </div>
+        </div>  
     </div>
-    <p><button class="btn-delete">Delete Account</button></p>
 </div>

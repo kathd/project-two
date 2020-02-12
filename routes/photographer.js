@@ -11,8 +11,7 @@ router.get('/', (req, res) => {
     .find()
     .then(photographers => {
         res.render('show-all', {photographers})
-    .catch(error => console.log(error));
-    })
+    }).catch(error => console.log(error));
 })
 
 
@@ -38,7 +37,6 @@ router.post('/add', (req, res)=> {
 })
 
 
-
 router.get("/manage", (req, res, next)=> {
     photographerModel
     .find()
@@ -51,20 +49,12 @@ router.get("/manage", (req, res, next)=> {
     .catch(dbErr => console.error("OH no, db err :", dbErr))
     })
 
-router.get("/:id", (req, res, next ) => {
-    photographerModel
-    .findById(req.params.id)
-    .then(photographer => { 
-        res.render("show-each", {
-            photographer,
-            css: ['show-each.css']
-        });
-    })
-    .catch(dbErr => console.error("OH no, db err :", dbErr));
-})
+
 
 
 router.get("/:id/delete", (req, res, next) => {
+    console.log("ici ????", req.params);
+    
     photographerModel
     .findByIdAndDelete(req.params.id)
     .then(dbRes => {

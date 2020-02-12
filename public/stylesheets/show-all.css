@@ -42,9 +42,10 @@
     height: 180px;
 }
 
-.pp img {
-    width: 100%;
-    height: auto;
+.tete {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
 }
 
 @media (max-width : 1024px) {

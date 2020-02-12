@@ -50,8 +50,6 @@ router.get("/manage", (req, res, next)=> {
     })
 
 
-
-
 router.get("/:id/delete", (req, res, next) => {
     console.log("ici ????", req.params);
     
@@ -97,6 +95,18 @@ router.post("/:id/edit", (req, res, next) => {
             res.redirect("/")
             
          } );
+    })
+
+    router.get("/:id", (req, res, next ) => {
+        photographerModel
+        .findById(req.params.id)
+        .then(photographer => { 
+            res.render("show-each", { 
+                photographer,
+                css: ['show-each.css']
+            });
+        })
+        .catch(dbErr => console.error("OH no, db err :", dbErr));
     })
 
     module.exports = router;

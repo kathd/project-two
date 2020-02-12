@@ -191,13 +191,19 @@ a {
 }
 
 .search-form button {
-  padding: 8px;
+  padding: 10px;
   color: white;
   background-color: #B62A3D;
   border: 1px solid #B62A3D;
-  font-size: 16px;
+  font-size: 14px;
   margin: 10px;
   border-radius: 10px;
+  font-family: inherit;
+}
+
+.search-form button:hover {
+  color: #B62A3D;
+  background-color: #fff;
 }
 
 
@@ -223,7 +229,7 @@ a {
   display: inline-block;
   width: auto;
 	font-size: 16px;
-	font-family: sans-serif;
+	font-family: inherit;
 	font-weight: 700;
 	color: #444;
 	line-height: 1.3;

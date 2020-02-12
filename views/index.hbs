@@ -14,7 +14,19 @@
 </div>
 <div id="second-part">
     <div class="visual-container">
+        {{#each photographers}}
         <div class="box">
+            <img class="img-home" src={{this.portfolio.[0]}}>
+            <div class="middle">
+                <div class="text">
+                    {{this.name}}<br>
+                    <span><a href="/photographers/{{this._id}}">See more...</a></span>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+        {{!-- <div class="box">
             <img class="img-home" src="images/Photographers-Pictures/Klaudia-Iga/KI8.jpg">
             <div class="middle">
                 <div class="text">
@@ -129,7 +141,7 @@
                     Ami Ta<br><span>See more</span>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 

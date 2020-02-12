@@ -67,32 +67,25 @@ router.get("/:id/delete", (req, res, next) => {
     .catch(dbErr => console.error("OH no, db err :", dbErr));
 })
 
-router.get("/:id/edit", (req, res, next) => {
+router.get("/:id/edit",  (req, res, next) => {
     photographerModel
     .findById(req.params.id)
     .then(dbRes => {
       res.render("forms/editph", { 
           photographer: dbRes ,
-          css: ['photog-form.css']
+          css: ['photog-form.css'], 
         });
     console.log(dbRes)
     })
     .catch(dbErr => console.error(dbErr));
 });
 
-router.post("/:id/edit", (req, res, next) => {
-    const {name, description, price, location, email, profile_picture, portfolio, categories }  = req.body
+router.post("/:id/edit", uploader.single("profile_picture"), (req, res, next) => {
+    const photographer  = req.body;
+    console.log(req.file) 
+    if (req.file) photographer.profile_picture = req.file.secure_url;
     photographerModel
-    .findByIdAndUpdate(req.params.id, {
-        name,  
-        description, 
-        price, 
-        location, 
-        email, 
-        profile_picture, 
-        portfolio, 
-        categories 
-    })
+    .findByIdAndUpdate(req.params.id, photographer)
     .then(dbRes => {
             res.redirect("/photographers");
         })

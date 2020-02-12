@@ -1,9 +1,9 @@
 <div class="pages">
-    <h2>All our photographers</h2>
+    <h1>> ALL PHOTOGRAPHERS <</h1>
         <div id="profile-container">
             <div class="form-container">
                 <p>Search a photographer</p>
-                    
+                {{> filter}}
             </div>
             <div id="all-photographers">
 
@@ -14,20 +14,35 @@
                 <div class="photographer-profile">
                     {{!-- portfolio layout --}}
                     <div class="portfolio-block">
-                        <img class="img-portfolio" src="{{this.portfolio.[0]}}">
-                        <img class="img-portfolio" src="{{this.portfolio.[1]}}">
-                        <img class="img-portfolio" src="{{this.portfolio.[2]}}">
-                        <img class="img-portfolio" src="{{this.portfolio.[3]}}">
+                        <div>
+                           <img class="img-portfolio" src="{{this.portfolio.[0]}}"> 
+                        </div>
+                        <div>
+                            <img class="img-portfolio" src="{{this.portfolio.[1]}}">
+                        </div>
+                        <div>
+                            <img class="img-portfolio" src="{{this.portfolio.[2]}}">
+                        </div>
+                        <div>
+                            <img class="img-portfolio" src="{{this.portfolio.[3]}}">
+                        </div>
                     </div>
-
+                    <hr style="width: 60%; margin: 20px auto;">
                     <div class="photographers-infos">
                         <div class="pp">
                             <img class="tete" src="{{this.profile_picture}}">
                         </div>
                         <div class="text-profile">
-                            <p>{{this.name}}</p>
-                            <p>{{this.price}}€ per day</p>
-                            <p>Based in {{this.location}}</p>
+                            <h3>{{this.name}}</h3>
+                            <p>Price : {{this.price}}€ per day</p>
+                            <p>Localisation : {{this.location}}</p>
+                            <p>Speciality : 
+                                <ul>
+                                    {{#each this.categories}}
+                                    <li>{{this}}</li>
+                                    {{/each}}
+                                </ul>
+                            </p>
                         </div>
                     </div>
                 </div>

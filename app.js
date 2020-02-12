@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.json())
 
-hbs.registerPartials(path.join(__dirname, "views/partials"))
+hbs.registerPartials(path.join(__dirname + "views/partials"))
 
 //INIT SESSION
 app.use(

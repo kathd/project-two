@@ -11,12 +11,12 @@ button color (brick): #B62A3D
 
 /* === FORM === */
 
-.photog-form {
+.photog-form, .user-form {
     margin: 30px auto;
     width: 380px;
 }
 
-.photog-form label {
+.photog-form label, .user-form label {
     color: #000;
     display: inline-block;
     margin-bottom: 8px;
@@ -29,7 +29,11 @@ button color (brick): #B62A3D
 .photog-form input[type=email],
 .photog-form textarea,
 .photog-form select,
-.photog-form button {
+.photog-form button,
+.user-form input[type=text],
+.user-form input[type=number],
+.user-form input[type=email],
+.user-form button {
     box-sizing: border-box;
     font-size: 14px;
     outline: 0;
@@ -44,7 +48,7 @@ button color (brick): #B62A3D
     resize: none;
 }
 
-.photog-form button {
+.photog-form button, .user-form button {
     background: #B62A3D;
     border: 1px solid #B62A3D;
     border-radius: 25px;
@@ -60,7 +64,7 @@ button color (brick): #B62A3D
     margin-top: 10px;
 }
 
-.photog-form button:hover {
+.photog-form button:hover, .user-form button:hover {
     background: #fff;
     color: #B62A3D;
     transition: .3s ease background;
@@ -151,9 +155,8 @@ button color (brick): #B62A3D
 }
 
 .error-message {
-    background: #F02B63;
     box-sizing: border-box;
-    color: #fff;
+    color: #F02B63;
     margin: 20px auto;
     padding: 20px;
     width: 40%;

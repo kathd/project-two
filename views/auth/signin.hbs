@@ -1,6 +1,11 @@
 <div class="middle-logo">
     <h1><a href="/"><img src="/images/logo/Fichier 164.png"></a></h1>
 </div>
+<div class="error-container">
+    {{#if error}}
+    <span class="error-message">{{error}}</span>
+    {{/if}}
+</div>
 <div class="form-container signin-wrapper">
     <form class="form" action="/auth/signin" method="POST">
         <label for="email">Email</label><br>
@@ -11,9 +16,4 @@
         <button type="submit">Sign in</button>
         <p>Don't have an account yet? <a href="/auth/signup">Sign up</a></p>
     </form>
-    <div class="error-container">
-        {{#if error}}
-        <span class="error-message">{{error}}</span>
-        {{/if}}
-    </div>
 </div>

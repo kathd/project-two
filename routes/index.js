@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const userModel = require('../models/User');
-const uploadCloud = require('./../config/cloudinary');
+const uploader = require("./../config/cloudinary");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -36,9 +36,11 @@ router.get('/account/edit', function(req, res, next) {
   .catch(err => console.error("OH no, db err :", err));
 });
 
-router.post('/account/edit', function(req, res, next) {
+router.post('/account/edit', uploader.single("avatar"), function(req, res, next) {
+  const user = req.body;
+  if (req.file) user.avatar = req.file.secure_url
   userModel
-  .findByIdAndUpdate(req.session.currentUser._id, req.body)
+  .findByIdAndUpdate(req.session.currentUser._id, user)
   .then(user => {
     res.redirect('/account')
     })

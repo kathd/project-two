@@ -22,7 +22,10 @@ router.get('/', (req, res) => {
     photographerModel
     .find()
     .then(photographers => {
-        res.render('show-all', {photographers})
+        res.render('show-all', {
+            photographers,
+            css : ["show-all.css"]
+        })
     }).catch(error => console.log(error));
 })
 

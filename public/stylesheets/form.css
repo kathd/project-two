@@ -5,23 +5,25 @@ button color (brick): #B62A3D
 /* === PAGE === */
 
 .page-title h1 {
-    text-align: center;
-    color: #B62A3D;
+  text-align: center;
+  color: #B62A3D;
 }
 
 /* === FORM === */
 
-.photog-form, .user-form {
-    margin: 30px auto;
-    width: 380px;
+.photog-form,
+.user-form {
+  margin: 30px auto;
+  width: 380px;
 }
 
-.photog-form label, .user-form label {
-    color: #000;
-    display: inline-block;
-    margin-bottom: 8px;
-    text-align: start;
-    width: 100%;
+.photog-form label,
+.user-form label {
+  color: #000;
+  display: inline-block;
+  margin-bottom: 8px;
+  text-align: start;
+  width: 100%;
 }
 
 .photog-form input[type=text],
@@ -34,131 +36,150 @@ button color (brick): #B62A3D
 .user-form input[type=number],
 .user-form input[type=email],
 .user-form button {
-    box-sizing: border-box;
-    font-size: 14px;
-    outline: 0;
-    padding: 10px;
-    width: 100%;
-    margin-bottom: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: 0;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 .photog-form textarea {
-    width: 100%;
-    height: 70px;
-    resize: none;
+  width: 100%;
+  height: 70px;
+  resize: none;
 }
 
-.photog-form button, .user-form button {
-    background: #B62A3D;
-    border: 1px solid #B62A3D;
-    border-radius: 25px;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    padding: 16px 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: .3s ease background;
-    width: 100%;
-    margin-top: 10px;
+.photog-form button,
+.user-form button {
+  background: #B62A3D;
+  border: 1px solid #B62A3D;
+  border-radius: 25px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 16px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .3s ease background;
+  width: 100%;
+  margin-top: 20px;
 }
 
-.photog-form button:hover, .user-form button:hover {
-    background: #fff;
-    color: #B62A3D;
-    transition: .3s ease background;
+.photog-form button:hover,
+.user-form button:hover {
+  background: #fff;
+  color: #B62A3D;
+  transition: .3s ease background;
 }
 
 /* === SPECIALTIES / CATEGORIES === */
 
 .select-specialties {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 /* === CUSTOM CHECK BOX === */
 
 /* Customize the label (the container) */
 .specialty-box {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin: 12px;
-    cursor: pointer;
-    font-size: 14px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  /* Hide the browser's default checkbox */
-  .specialty-box input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  
-  /* Create a custom checkbox */
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .specialty-box:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .specialty-box input:checked ~ .checkmark {
-    background-color: #B62A3D;
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .specialty-box input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .specialty-box .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.specialty-box input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.specialty-box:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.specialty-box input:checked~.checkmark {
+  background-color: #B62A3D;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.specialty-box input:checked~.checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.specialty-box .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
 
 /* === ERROR MSG === */
 
 .error-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .error-message {
-    box-sizing: border-box;
-    color: #F02B63;
-    margin: 20px auto;
-    padding: 20px;
-    width: 40%;
-    text-align: center;
+  box-sizing: border-box;
+  color: #F02B63;
+  margin: 20px auto;
+  padding: 20px;
+  width: 40%;
+  text-align: center;
+}
+
+/* CLOUDINARY */
+
+.cloudinary-button {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 16px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-bottom: 20px
+}
+
+.cloudinary-button:hover {
+  color: #B62A3D;
+  background-color: #fff;
 }

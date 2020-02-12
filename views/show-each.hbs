@@ -10,14 +10,27 @@
             <form action="mailto:{{photographer.email}}" method="post" enctype="text/plain">
                 <input type="submit" value="BOOK">
             </form>
-            {{/if}}
+            <form action="/photographers//{{photographer._id}}/solo" method="POST">
+            <label for="reviews">add a review</label>
+            <textarea type="text" name="review" placeholder="blablabla"></textarea>  
+            <button type="submit">submit</button>
+            </form>
+             {{/if}}
+              <div>
+        {{#each photographer.reviews}}
+        <div>
+        <p class="comment" >{{this}}</p>
+        </div>
+        {{/each}}
+    </div>
         </div>
     </div>
     
-    <div class-"each-portfolio">
+    <div class="each-portfolio">
         {{#each photographer.portfolio}}
         <img class="each-photo" src={{this}}>
         {{/each}}
     </div>
+
     
 </div>

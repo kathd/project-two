@@ -1,15 +1,24 @@
 var express = require('express');
 var router = express.Router();
 const userModel = require('../models/User');
+const photographerModel = require('../models/Photographer');
 const uploader = require("./../config/cloudinary");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   const showAbout = true;
-  res.render('index', {
-    showAbout,
-    css: ['home.css']
-  });
+  
+  photographerModel
+  .find()
+  .then(photographers => {
+    // res.send(photographers)
+    res.render('index', {
+      showAbout,
+      photographers,
+      css: ['home.css']
+    })
+  })
+  .catch(err => console.error(err))
 });
 
 router.get('/account', function(req, res, next) {

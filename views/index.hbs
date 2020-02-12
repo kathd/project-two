@@ -1,19 +1,32 @@
 <div class="intro-container">
-    <h1>Catch Phrase</h1>
+    <h1>Voulez-vous "cliché" avec moi?</h1>
     <div class="search-container">
         <p>Search by</p>
-        <form action="" method="">
-            <select name="cities">
-                <option value="paris">Paris</option>
-                <option value="london">London</option>
-            </select>
-            <input type="submit">
+        <form action="" method="post" class="search-form">
+            <select class="select-css" id="location" name="location">
+                <option value="Paris">Paris</option>
+                <option value="London">London</option>
+                <option value="Berlin">Berlin</option>
+            </select>   
+            <button type="submit">Submit</button>
         </form>
     </div>
 </div>
 <div id="second-part">
     <div class="visual-container">
+        {{#each photographers}}
         <div class="box">
+            <img class="img-home" src={{this.portfolio.[0]}}>
+            <div class="middle">
+                <div class="text">
+                    {{this.name}}<br>
+                    <span><a href="/photographers/{{this._id}}/solo">See more...</a></span>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+        {{!-- <div class="box">
             <img class="img-home" src="images/Photographers-Pictures/Klaudia-Iga/KI8.jpg">
             <div class="middle">
                 <div class="text">
@@ -128,7 +141,7 @@
                     Ami Ta<br><span>See more</span>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 
@@ -160,7 +173,7 @@
         </div>
 
 
-            <!-- SECOND PROFILE -->
+        <!-- SECOND PROFILE -->
         <div class="profile">
             <div class="pp-container">
                 <div class="pp"></div>
@@ -185,7 +198,7 @@
         </div>
 
 
-            <!-- THIRD PROFILE -->
+        <!-- THIRD PROFILE -->
         <div class="profile">
             <div class="pp-container">
                 <div class="pp"></div>

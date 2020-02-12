@@ -95,7 +95,7 @@ router.post("/:id/edit", (req, res, next) => {
         })
         .catch(dbErr => {
             console.error("OH no, db err :", dbErr) 
-            res.redirect("/")
+            res.redirect("/:id")
             
          } );
     })

@@ -37,22 +37,15 @@ router.get('/account/edit', function(req, res, next) {
 });
 
 router.post('/account/edit', function(req, res, next) {
-  const {firstname, lastname, company, email, password} = req.body
   userModel
-  .findById(req.session.currentUser._id, {
-    firstname,
-    lastname,
-    company,
-    email,
-    password
-  })
+  .findByIdAndUpdate(req.session.currentUser._id, req.body)
   .then(user => {
-    res.render('forms/edituser', { 
-      user,
-      css: ['photog-form.css']
+    res.redirect('/account')
     })
-  })
-  .catch(err => console.error("OH no, db err :", err));
+  .catch(err => {
+    console.error("OH no, db err :", err)
+    res.redirect('/account/edit')
+  });
 });
 
 

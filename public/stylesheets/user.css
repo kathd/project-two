@@ -1,16 +1,25 @@
 .user-container {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-
+    flex-direction: column;
 
 }
 
+.user-title {
+    margin: 0 20px;
+    /* color: #B62A3D; */
+}
+
 /* CARD */
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
 .user-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-    width: 30%;
+    width: 40%;
     /* margin: auto; */
     margin: 20px 10px;
     text-align: center;
@@ -19,6 +28,14 @@
 
 .user-card > * {
     margin: 10px;
+}
+
+.user-avatar {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #B62A3D;
 }
 
 .link-card {
@@ -36,6 +53,7 @@
   }
   
   .btn-edit {
+    text-decoration: none;
     border: 1px solid #B62A3D;
     display: inline-block;
     padding: 8px;
@@ -46,17 +64,14 @@
     width: 50%;
     font-size: 14px;
     border-radius: 20px;
+    margin-top: 20px;
   }
 
   .btn-delete {
+    margin: 0 20px;
     padding: 8px;
     font-size: 10px;
 
-  }
-  
-  .user-card a {
-    text-decoration: none;
-    color: black;
   }
   
   .btn-edit:hover, a:hover {

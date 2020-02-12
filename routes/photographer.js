@@ -69,7 +69,7 @@ router.get("/:id/edit", (req, res, next) => {
           photographer: dbRes ,
           css: ['photog-form.css']
         });
-    console.log(dbRes)
+    // console.log(dbRes)
     })
     .catch(dbErr => console.error(dbErr));
 });

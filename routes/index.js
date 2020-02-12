@@ -24,5 +24,38 @@ router.get('/account', function(req, res, next) {
   .catch(err => console.error("OH no, db err :", err));
 });
 
+router.get('/account/edit', function(req, res, next) {
+  userModel
+  .findById(req.session.currentUser._id)
+  .then(user => {
+    res.render('forms/edituser', { 
+      user,
+      css: ['photog-form.css']
+    })
+  })
+  .catch(err => console.error("OH no, db err :", err));
+});
+
+router.post('/account/edit', function(req, res, next) {
+  const {firstname, lastname, company, email, password} = req.body
+  userModel
+  .findById(req.session.currentUser._id, {
+    firstname,
+    lastname,
+    company,
+    email,
+    password
+  })
+  .then(user => {
+    res.render('forms/edituser', { 
+      user,
+      css: ['photog-form.css']
+    })
+  })
+  .catch(err => console.error("OH no, db err :", err));
+});
+
+
+
 
 module.exports = router;

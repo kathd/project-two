@@ -29,7 +29,7 @@ const userSchema = new Schema({
     },
     avatar: {
         type: String,
-        default: ""
+        default: "/images/id-card-512.png"
     }
 });
 

@@ -20,6 +20,7 @@ const photographerSchema = new Schema({
     },
     profile_picture: {
         type: String,
+        default: "/images/id-card-512.png"
     },
     reviews: {
         type : [String]

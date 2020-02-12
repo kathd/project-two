@@ -107,6 +107,15 @@ router.post("/:id/edit", uploader.single("profile_picture"), (req, res, next) =>
         .catch(dbErr => console.error("OH no, db err :", dbErr));
     })
  
+    router.post("/:id/solo", (req, res, next ) => {
+        const review  = req.body.review;
+        console.log(review)
+        photographerModel
+        .findByIdAndUpdate(req.params.id, {$push: {"reviews": review}}  )
+        .then( db => res.redirect(`/photographers/${req.params.id}/solo`) )
+        .catch(dbErr => console.error("OH no, db err :", dbErr));
+        
+    })
 
 
 

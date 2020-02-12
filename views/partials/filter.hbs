@@ -1,25 +1,28 @@
 <form id="form" action="/photographers/add" method="POST">
-    <label for="name">Name</label><br>
-    <input type="text" name="name" placeholder="Name">
+    <div>
+       <label for="price">Price</label>
+        <input type="number" name="price" placeholder="700"> 
+    </div>
 
-    <label for="price">Price</label><br>
-    <input type="number" name="price" placeholder="700">
+    <select name='location'>
+        <option value="" disabled selected>Choose a location</option>
+        <option value="Paris">Paris</option>
+        <option value="London">London</option>
+        <option value="Madrid">Madrid</option>
+    </select>
 
-    <label for="location"> Please select your location</label><br>
-    <input type="radio" name="categories" value="Paris"> Paris<br>
-    <input type="radio" name="categories" value="London"> London<br>
-    <input type="radio" name="categories" value="Berlin"> Berlin<br>
-
-    <label for="categories"> Please select yours specialties</label><br>
-    <input type="checkbox" name="categories" value="Events"> Events
-    <input type="checkbox" name="categories" value="lifestyle"> Lifestyle
-    <input type="checkbox" name="categories" value="real estate"> Real estate
-    <input type="checkbox" name="categories" value="Portrait">Portrait
-    <input type="checkbox" name="categories" value="real estate"> Packshots and still life
-    <input type="checkbox" name="categories" value="Food"> Food
-    <input type="checkbox" name="categories" value="Mode"> Mode
-    <input type="checkbox" name="categories" value="Advertising"> Advertising
-
+    <div>
+        <label for="categories"> Please select yours specialties</label>
+        <input type="checkbox" name="categories" value="Events"> Events<br>
+        <input type="checkbox" name="categories" value="lifestyle"> Lifestyle<br>
+        <input type="checkbox" name="categories" value="real estate"> Real estate<br>
+        <input type="checkbox" name="categories" value="Portrait">Portrait<br>
+        <input type="checkbox" name="categories" value="real estate"> Packshots and still life<br>
+        <input type="checkbox" name="categories" value="Food"> Food<br>
+        <input type="checkbox" name="categories" value="Mode"> Mode<br>
+        <input type="checkbox" name="categories" value="Advertising"> Advertising 
+    </div>
+    
     <button type="submit">Find</button>
 
 </form>

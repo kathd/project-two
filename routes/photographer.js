@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
     .then(photographers => {
         res.render('show-all', {
             photographers,
-            css : ["show-all.css"]
+            css : ["show-all.css", "filter.css"]
         })
     }).catch(error => console.log(error));
 })

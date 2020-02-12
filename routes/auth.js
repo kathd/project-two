@@ -25,19 +25,27 @@ router.get("/signin", (req, res) => {
 //CREATE ACCOUNT
 router.post("/signup", uploader.single("avatar"), (req, res, next) => {
   const user = req.body; 
-
+  const noNav = true
   if (req.file) user.avatar = req.file.secure_url;
 
   if (!user.email || !user.password) {
     //CAN ADD ERROR MSG
-    return res.redirect("/auth/signup");
+    return res.render("auth/signup", {
+      noNav,
+      css: ['auth-form.css'],
+      error : "Indicate email and password to sign up"
+    })
   } else {
     userModel
       .findOne({ email: user.email })
       .then(dbRes => {
         if (dbRes) {
           //CAN ADD MSG ERROR
-          return res.redirect("/auth/signup"); //
+          return res.render("auth/signup", {
+            noNav,
+            css: ['auth-form.css'],
+            error : "The email already exists"
+          });
         }
 
         const salt = bcrypt.genSaltSync(10);
@@ -57,20 +65,26 @@ router.post("/signup", uploader.single("avatar"), (req, res, next) => {
 //SIGN IN WITH ACCOUNT
 router.post("/signin", (req, res, next) => {
   const user = req.body;
-
+  const noNav = true;
   if (!user.email || !user.password) {
     // one or more field is missing
     //PUT ERROR MSG
-    return res.redirect("/auth/signin");
+    return res.render("auth/signin", {
+      noNav,
+      css: ['auth-form.css'],
+      error : "Indicate email and password to sign in"
+    })
   }
 
   userModel
     .findOne({ email: user.email })
     .then(dbRes => {
       if (!dbRes) {
-        // no user found with this email
-        //ERROR MSG "Wrong email/password"
-        return res.redirect("/auth/signin");
+        return res.render("auth/signin", {
+          noNav,
+          css: ['auth-form.css'],
+          error : "Incorrect email or password"
+        })
       }
       // user has been found in DB !
       if (bcrypt.compareSync(user.password, dbRes.password)) {
@@ -85,7 +99,11 @@ router.post("/signin", (req, res, next) => {
       } else {
         // encrypted password match failed
         //ERROR MSG "Wrong email/password"
-        return res.redirect("/auth/signin");
+        return res.render("auth/signin", {
+          noNav,
+          css: ['auth-form.css'],
+          error : "Incorrect email or password"
+        });
       }
     })
     .catch(next);

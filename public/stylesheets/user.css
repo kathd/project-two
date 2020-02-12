@@ -66,13 +66,6 @@
     border-radius: 20px;
     margin-top: 20px;
   }
-
-  .btn-delete {
-    margin: 0 20px;
-    padding: 8px;
-    font-size: 10px;
-
-  }
   
   .btn-edit:hover, a:hover {
     background-color: #fff;

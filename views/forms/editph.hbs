@@ -3,7 +3,7 @@
     <h1>Edit Photographer</h1>
   </div>
   <div class="form-container">
-    <form class="photog-form" action="/photographers//{{photographer._id}}/edit" method="POST">
+    <form class="photog-form" action="/photographers//{{photographer._id}}/edit" method="POST" enctype="multipart/form-data">
       <label for="name">Name</label>
       <input type="text" name="name" placeholder="Name" value="{{photographer.name}}">
 
@@ -103,6 +103,10 @@
       </div>
       <div id="upload_widget" class="cloudinary-button">Upload files</div>
       
+      <label for="profile_picture">Profile Picture</label>
+        <input id="input-file" type="file"  name="profile_picture" value="{{photographer.profile_picture}}">
+
+
       <button type="submit">Update Photographer</button>
   
     </form>

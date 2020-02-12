@@ -3,7 +3,7 @@
     <h1>Edit Account</h1>
   </div>
   <div class="form-container">
-    <form class="user-form" action="/account/edit" method="POST">
+    <form class="user-form" action="/account/edit" method="POST" enctype="multipart/form-data">
       <label for="firstname">First Name</label>
       <input type="text" name="firstname" placeholder="First Name" value="{{user.firstname}}">
       
@@ -12,6 +12,9 @@
 
       <label for="company">Company</label>
       <input type="text" name="company" placeholder="Company" value="{{user.company}}">
+
+      <label for="avatar">Avatar</label>
+        <input id="input-file" type="file"  name="avatar" value="{{user.avatar}}">
 
       {{!-- <label for="email">Email</label>
       <input type="email" name="email" placeholder="johndoe@gmail.com" value="{{user.email}}">

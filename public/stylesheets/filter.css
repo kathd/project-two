@@ -1,0 +1,16 @@
+#form {
+    background-color: #B62A3D;
+    position: fixed;
+    width: inherit;
+}
+
+label, select {
+    display: block;
+}
+
+
+#form>* {
+    margin-top: 25px;
+    margin-left: 10px;
+}
+

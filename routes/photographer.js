@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
     .then(photographers => {
         res.render('show-all', {
             photographers,
-            css : ["show-all.css"]
+            css : ["show-all.css", "filter.css"]
         })
     }).catch(error => console.log(error));
 })
@@ -67,7 +67,7 @@ router.get("/:id/delete", (req, res, next) => {
     .catch(dbErr => console.error("OH no, db err :", dbErr));
 })
 
-router.get("/:id/edit", (req, res, next) => {
+router.get("/:id/edit",  (req, res, next) => {
     photographerModel
     .findById(req.params.id)
     .then(dbRes => {
@@ -80,19 +80,12 @@ router.get("/:id/edit", (req, res, next) => {
     .catch(dbErr => console.error(dbErr));
 });
 
-router.post("/:id/edit", (req, res, next) => {
-    const {name, description, price, location, email, profile_picture, portfolio, categories }  = req.body
+router.post("/:id/edit", uploader.single("profile_picture"), (req, res, next) => {
+    const photographer  = req.body;
+    console.log(req.file) 
+    if (req.file) photographer.profile_picture = req.file.secure_url;
     photographerModel
-    .findByIdAndUpdate(req.params.id, {
-        name,  
-        description, 
-        price, 
-        location, 
-        email, 
-        profile_picture, 
-        portfolio, 
-        categories 
-    })
+    .findByIdAndUpdate(req.params.id, photographer)
     .then(dbRes => {
             res.redirect("/photographers");
         })

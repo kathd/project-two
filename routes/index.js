@@ -30,7 +30,7 @@ router.get('/account/edit', function(req, res, next) {
   .then(user => {
     res.render('forms/edituser', { 
       user,
-      css: ['photog-form.css']
+      css: ['form.css']
     })
   })
   .catch(err => console.error("OH no, db err :", err));

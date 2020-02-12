@@ -32,7 +32,7 @@ router.get('/', (req, res) => {
 
 router.get('/add', (req, res)=> {
     res.render('forms/add', {
-        css: ['photog-form.css']
+        css: ['form.css']
     });
 })
 
@@ -73,7 +73,7 @@ router.get("/:id/edit", (req, res, next) => {
     .then(dbRes => {
       res.render("forms/editph", { 
           photographer: dbRes ,
-          css: ['photog-form.css']
+          css: ['form.css']
         });
     // console.log(dbRes)
     })

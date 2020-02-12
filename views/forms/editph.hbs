@@ -88,7 +88,20 @@
           <span class="checkmark"></span>
         </label>
 
+
+       <label for="portfolio">Portfolio 
+        <input id="shadow1" type="text" name="portfolio" value="{{photographer.portfolio.[0]}}">
+        <input id="shadow2" type="text" name="portfolio" value="{{photographer.portfolio.[1]}}">
+        <input id="shadow3" type="text" name="portfolio" value="{{photographer.portfolio.[2]}}">
+        <input id="shadow4" type="text" name="portfolio" value="{{photographer.portfolio.[3]}}">
+        <input id="shadow5" type="text" name="portfolio" value="{{photographer.portfolio.[4]}}">
+        <input id="shadow6" type="text" name="portfolio" value="v{{photographer.portfolio.[5]}}">
+        <input id="shadow7" type="text" name="portfolio" value="{{photographer.portfolio.[6]}}">
+        <input id="shadow8" type="text" name="portfolio" value="{{photographer.portfolio.[7]}}">
+        <input id="shadow9" type="text" name="portfolio" value="{{photographer.portfolio.[8]}}">
+        <input id="shadow10" type="text" name="portfolio" value="{{photographer.portfolio.[9]}}">
       </div>
+      <div id="upload_widget" class="cloudinary-button">Upload files</div>
       
       <button type="submit">Update Photographer</button>
   
@@ -102,3 +115,29 @@
 
   </div>
 </div>
+
+
+
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>  
+
+<script type="text/javascript">  
+var count = 0
+var myWidget = cloudinary.createUploadWidget({
+  cloudName: 'dgsw2jxng', 
+  uploadPreset: 'p0t2hwqz',
+  apiKey: '451964888999499'}, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      count ++
+      console.log(result.info.secure_url)
+      //Creer un input dans le form 
+      document.getElementById(`shadow${count}`).value = result.info.secure_url
+
+      console.log('Done! Here is the image info: ', result.info); 
+    }
+  }
+)
+
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+  }, false);
+</script>

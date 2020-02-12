@@ -1,10 +1,22 @@
 var express = require('express');
 var router = express.Router();
 const photographerModel = require("../models/Photographer");
-const uploadCloud = require("./../config/cloudinary")
+const uploader = require("./../config/cloudinary");
+
 
 
 // Display all photographer 
+router.get("/manage", (req, res, next)=> {
+    photographerModel
+    .find()
+    .then(photographers => {
+        res.render("manage-all", {
+            photographers,
+            css: ['manage.css']
+        });
+    })
+    .catch(dbErr => console.error("OH no, db err :", dbErr))
+    })
 
 router.get('/', (req, res) => {
     photographerModel
@@ -21,15 +33,16 @@ router.get('/add', (req, res)=> {
     });
 })
 
-router.post('/add', (req, res)=> {
+router.post('/add',uploader.single("profile_picture"), (req, res)=> {
     // console.log(req.files);
     // const files = req.files;
     
     // files.map(file => portfolio.push(file.url));
-    console.log(req.body)
-  const {name,   description, price, location, email,  profile_picture, portfolio, categories }  = req.body;
+    
+  const photographer  = req.body;
+  if (req.file) photographer.profile_picture = req.file.secure_url;
     photographerModel
-    .create({name, description, price, location, email, profile_picture, portfolio, categories })
+    .create(photographer)
     .then(dbRes => res.redirect("/photographers"))
     .catch(dbErr => {
       console.log(dbErr);
@@ -37,18 +50,8 @@ router.post('/add', (req, res)=> {
 })
 
 
-router.get("/manage", (req, res, next)=> {
-    photographerModel
-    .find()
-    .then(photographers => {
-        res.render("manage-all", {
-            photographers,
-            css: ['manage.css']
-        });
-    })
-    .catch(dbErr => console.error("OH no, db err :", dbErr))
-    })
 
+   
 
 router.get("/:id/delete", (req, res, next) => {
     console.log("ici ????", req.params);
@@ -96,8 +99,7 @@ router.post("/:id/edit", (req, res, next) => {
             
          } );
     })
-
-    router.get("/:id", (req, res, next ) => {
+    router.get("/:id/solo", (req, res, next ) => {
         photographerModel
         .findById(req.params.id)
         .then(photographer => { 
@@ -108,6 +110,9 @@ router.post("/:id/edit", (req, res, next) => {
         })
         .catch(dbErr => console.error("OH no, db err :", dbErr));
     })
+
+
+
 
     module.exports = router;
 

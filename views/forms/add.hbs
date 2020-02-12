@@ -3,7 +3,7 @@
     <h1>Add Photographer</h1>
   </div>
   <div class="form-container">
-    <form class="photog-form" action="/photographers/add" method="POST">
+    <form class="photog-form" action="/photographers/add" method="POST" enctype="multipart/form-data">
       <label for="name">Name</label>
       <input type="text" name="name" placeholder="Name">
 
@@ -68,7 +68,7 @@
           <span class="checkmark"></span>
         </label>
       </div>
-
+ 
        <label for="portfolio">Portfolio 
         <input id="shadow1" type="text" name="portfolio" value="value1">
         <input id="shadow2" type="text" name="portfolio" value="value2">
@@ -81,9 +81,10 @@
         <input id="shadow9" type="text" name="portfolio" value="value9">
         <input id="shadow10" type="text" name="portfolio" value="value10">
         </label>
+        <div id="upload_widget" class="cloudinary-button">Upload files</div>
       
-       {{!-- <label for="profile_picture">profile_picture</label>
-        <input id="input-file" type="file"  name="profile_picture"> --}}
+       <label for="profile_picture">Profile Picture</label>
+        <input id="input-file" type="file"  name="profile_picture">
 {{!-- 
        <label for="portfolio">Portfolio</label>
         <input id="input-file" type="file"  name="portfolio" multiple> --}}
@@ -93,7 +94,7 @@
     </form>
 
 
-<button id="upload_widget" class="cloudinary-button">Upload files</button>
+
 
 <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>  
 

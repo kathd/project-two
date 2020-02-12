@@ -1,55 +1,81 @@
+.pages>h1 {
+    text-align: center;
+}
+
 #profile-container {
     display: flex;
     justify-content: space-evenly;
 }
 
+.form-container{
+    width: 30vw;
+}
+
 #all-photographers{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    margin: 60px auto;
+    grid-template-columns: repeat(2, 30vw);
+    grid-template-rows: auto;
+    margin: 20px auto;
+    grid-column-gap: 30px;
+    grid-row-gap: 40px;
 }
 
 .photographer-profile{
-    border: solid 0.5px black;
-    width: 60%;
+    border: solid 0.5px lightgrey;
+    width: 100%;
     margin: 40px auto;
+    height: 100%;
+    box-shadow: 17px 20px 18px 0px rgba(189,189,189,1);
+}
+.photographer-profile:hover{
+    box-shadow: 17px 20px 18px 0px rgba(182,42,61,0.64);
 }
 
 .portfolio-block{
-    width: 50%;
-    padding: 10px;
-    background-color: blue;
-    break-inside: avoid;
-    position: relative;
-    columns: 2;
-    margin: 10px auto;
+    display: flex;
+    height: 40%;
+    width: 90%;
+    overflow-y: hidden;
+    margin: 20px auto 0 auto;
+    align-items: center;
 }
+
 
 .img-portfolio{
     max-width: 100%;
-    
+    height: auto;
+    margin: auto;
 }
 
 .photographers-infos {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    height: 40%;
 }
 
-.pp {
-    width: 180px;
-    height: 180px;
-}
 
 .tete {
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
+    border-radius: 50%;
+}
+
+.text-profile>h3 {
+    font-family: 'Cinzel', serif;
+    margin-bottom: 30px;
+}
+.text-profile>p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.text-profile li {
+    list-style: square;
+    margin-left: 20px;
 }
 
 @media (max-width : 1024px) {
     #all-photographers {
-        grid-template-columns: 1fr;
+        grid-template-columns: 40vw;
     }
 }

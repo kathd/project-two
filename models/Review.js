@@ -4,10 +4,19 @@ const Schema = mongoose.Schema;
 const reviewSchema = new Schema({
     content: {
         type: String
+    },
+    link: {
+        type: Schema.Types.ObjectId,
+        ref: "Link"
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+    },
+    photographer: {
+        type: Schema.Types.ObjectId,
+        ref: "Photographer"
     }
-    // dateLinked from LINK MODEL
-    // firstname from USER MODEL
-    // photographer_id
 
 });
 

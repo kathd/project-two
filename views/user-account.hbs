@@ -14,11 +14,20 @@
                 <p><a class="btn-edit" href="/account/edit">Edit</a></p> 
             </div>
             <div class="link-card">
-                <h3>You have contacted the following photographers:</h3>
+                <h3>Your favorite photographers</h3>
                 <div class="linked-photog-list">
-                    {{!-- booking model? --}}
+                    {{#each user.photogfav}}
+                    <div>
+                    <a>
+                        {{this.name}}
+                    </a>
+                    <form action="/account/{{this._id}}/remove" method="POST">
+                    <button type="submit">Remove</button>
+                    </form>
+                    </div>
+                    {{/each}}
                 </div>
             </div>
         </div>  
     </div>
-</div>
+    </div>

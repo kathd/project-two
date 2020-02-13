@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const photographerModel = require("../models/Photographer");
+const userModel = require("../models/User")
 const uploader = require("./../config/cloudinary");
 
 
@@ -125,6 +126,7 @@ router.post("/:id/edit", uploader.single("profile_picture"), (req, res, next) =>
     router.get("/:id/solo", (req, res, next ) => {
         photographerModel
         .findById(req.params.id)
+        .populate('fans')
         .then(photographer => { 
             res.render("show-each", { 
                 photographer,
@@ -134,8 +136,45 @@ router.post("/:id/edit", uploader.single("profile_picture"), (req, res, next) =>
         .catch(dbErr => console.error("OH no, db err :", dbErr));
     })
  
+    router.post("/:id/solo", (req, res, next ) => {
+        const review  = req.body.review;
+        console.log(review)
+        photographerModel
+        .findByIdAndUpdate(req.params.id, {$push: {"reviews": review}}  )
+        .then( db => res.redirect(`/photographers/${req.params.id}/solo`) )
+        .catch(dbErr => console.error("OH no, db err :", dbErr));
+
+    })
+
+    router.post("/:id/solo/liked", (req, res, next) => {
+        userModel
+  .findById(req.session.currentUser._id)
+  .then(currentuser => {
+    let user = currentuser
+    let photographer = req.params.id
+    console.log(user)
+    console.log(photographer)
+     userModel
+     .update({ _id: user }, { $push: { photogfav: { _id: photographer }}})
+     .then(db => {
+         res.redirect(`/photographers/${req.params.id}/solo`);
+         photographerModel
+         .update({_id : photographer }, { $push : { fans : {_id : user._id}}})
+         .catch((error) => {
+            console.log(error) }
+    
+     )
+     .catch((error) => {
+       console.log(error)
+     })
 
 
+})
+
+    })
+    })
+
+    
 
     module.exports = router;
 

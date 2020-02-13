@@ -91,6 +91,7 @@ input[type=submit]:hover {
     border-radius: 20px;
     min-height: 80px;
     padding: 20px;
+    margin: 10px 0;
 }
 
 /* === TABS === */
@@ -102,15 +103,14 @@ input[type=submit]:hover {
 }
 
 .tabset {
-    width: 100vh;
+    width: 80vw;
 }
+
 
 .add-review-container {
     width: 100%;
     margin: 10px 0;
 }
-
-
 
 .add-review-container textarea {
     width: 100%;
@@ -121,6 +121,17 @@ input[type=submit]:hover {
     border: 1px solid #B62A3D;
     padding: 10px;
     font-size: 12px;
+
+}
+
+#tab-review h2 {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.add-review-container, .each-review {
+    max-width: 80%;
+    margin-left: 40px;
 }
 
 /*
@@ -189,6 +200,7 @@ input[type=submit]:hover {
     border-bottom: 1px solid #fff;
     margin-bottom: -1px;
   }
+  
   
   .tab-panel {
     width: 100%;

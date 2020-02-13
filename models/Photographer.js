@@ -29,7 +29,8 @@ const photographerSchema = new Schema({
     categories: {
         type: [String],
         enum: ["events", "lifestyle", "real estate", "portrait", "packshots", "food", "fashion", "advertising"]
-    }
+    },
+    fans :[ { type : Schema.Types.ObjectId, ref: 'User' } ],
 });
 
 const Photographer = mongoose.model("Photographer", photographerSchema);

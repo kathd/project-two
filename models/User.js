@@ -30,7 +30,8 @@ const userSchema = new Schema({
     avatar: {
         type: String,
         default: "/images/id-card-512.png"
-    }
+    },
+    photogfav: [ { type : Schema.Types.ObjectId, ref: 'Photographer' } ],
 });
 
 const User = mongoose.model("User", userSchema);

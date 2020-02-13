@@ -24,6 +24,7 @@ router.get('/', function(req, res, next) {
 router.get('/account', function(req, res, next) {
   userModel
   .findById(req.session.currentUser._id)
+  .populate('photogfav')
   .then(user => {
     res.render('user-account', { 
       user,

@@ -15,6 +15,9 @@
         </div>
         <div>
             {{#if isLoggedIn}}
+            <form action="/photographers//{{photographer._id}}/solo/liked" method="POST">
+                <button type="submit">Like</button>
+            </form>
             <form action="mailto:{{photographer.email}}" method="post" enctype="text/plain">
                 <input type="submit" value="BOOK">
             </form>

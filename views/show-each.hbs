@@ -15,6 +15,10 @@
             <textarea type="text" name="review" placeholder="blablabla"></textarea>  
             <button type="submit">submit</button>
             </form>
+            <form action="/photographers//{{photographer._id}}/solo/liked" method="POST">
+                <button type="submit">Like</button>
+            </form>
+            
              {{/if}}
               <div>
         {{#each photographer.reviews}}

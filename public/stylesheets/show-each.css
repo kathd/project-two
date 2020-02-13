@@ -6,11 +6,11 @@
 }
 
 .photog-info {
-    width: 70%;
+    width: 80%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
 }
 
 .photog-info div {
@@ -43,6 +43,114 @@ input[type=submit]:hover {
     width:30%;
 }
 
-p b.impt {
+.impt {
     color: #B62A3D;
 }
+
+.each-review {
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    min-height: 80px;
+    padding: 20px;
+}
+
+/* === TABS === */
+
+.tabset-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabset {
+    width: 100vh;
+}
+
+.add-review-container {
+    width: 100%;
+}
+
+
+
+.add-review-container textarea {
+    width: 100%;
+    min-height: 80px;
+    margin: 20px 0;
+    border-radius: 20px;
+    border: 1px solid #B62A3D;
+    padding: 10px;
+    font-size: 12px;
+}
+
+/*
+ CSS for the main interaction
+*/
+.tabset > input[type="radio"] {
+    position: absolute;
+    left: -200vw;
+  }
+  
+  .tabset .tab-panel {
+    display: none;
+  }
+  
+  .tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+  .tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+  .tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+  .tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+  .tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+  .tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+    display: block;
+  }
+  
+  /*
+   Styling
+  */
+  body {
+    /* font: 16px/1.5em inherit; */
+    color: #333;
+    /* font-weight: 300; */
+  }
+  
+  .tabset > label {
+    position: relative;
+    display: inline-block;
+    padding: 15px 15px 25px;
+    border: 1px solid transparent;
+    border-bottom: 0;
+    cursor: pointer;
+    /* font-weight: 600; */
+  }
+  
+  .tabset > label::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    width: 22px;
+    height: 4px;
+    background: #8d8d8d;
+  }
+  
+  .tabset > label:hover,
+  .tabset > input:focus + label {
+    color: #B62A3D;
+  }
+  
+  .tabset > label:hover::after,
+  .tabset > input:focus + label::after,
+  .tabset > input:checked + label::after {
+    background: #B62A3D;
+  }
+  
+  .tabset > input:checked + label {
+    border-color: #ccc;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+  }
+  
+  .tab-panel {
+    width: 100%;
+    padding: 30px 0;
+    border-top: 1px solid #ccc;
+  }

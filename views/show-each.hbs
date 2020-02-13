@@ -1,36 +1,64 @@
 <div class="pages content profile-page">
     <div class="photog-info">
         <div><img class="each-profile-pic" src={{photographer.profile_picture}}></div>
-        <div><h1>{{photographer.name}}</h1></div>
-        <div><p>{{photographer.description}}</p></div>
-        <div><p>Price starts at <b class="impt">{{photographer.price}} euros</b>  per day</p></div>
-        <div><p>Located at <b class="impt">{{photographer.location}}</b></p></div>
+        <div>
+            <h1>{{photographer.name}}</h1>
+        </div>
+        <div>
+            <p>{{photographer.description}}</p>
+        </div>
+        <div>
+            <p>Price starts at <b class="impt">{{photographer.price}} euros</b> per day</p>
+        </div>
+        <div>
+            <p>Located at <b class="impt">{{photographer.location}}</b></p>
+        </div>
         <div>
             {{#if isLoggedIn}}
             <form action="mailto:{{photographer.email}}" method="post" enctype="text/plain">
                 <input type="submit" value="BOOK">
             </form>
-            <form action="/photographers//{{photographer._id}}/solo" method="POST">
-            <label for="reviews">add a review</label>
-            <textarea type="text" name="review" placeholder="blablabla"></textarea>  
-            <button type="submit">submit</button>
-            </form>
-             {{/if}}
-              <div>
-        {{#each photographer.reviews}}
-        <div>
-        <p class="comment" >{{this}}</p>
+            {{/if}}
         </div>
-        {{/each}}
-    </div>
-        </div>
-    </div>
-    
-    <div class="each-portfolio">
-        {{#each photographer.portfolio}}
-        <img class="each-photo" src={{this}}>
-        {{/each}}
     </div>
 
-    
+    <div class="tabset-container">
+    <div class="tabset">
+        <!-- Tab 1 -->
+        <input type="radio" name="tabset" id="tab1" aria-controls="tab-portfolio" checked>
+        <label for="tab1">Portfolio</label>
+        <!-- Tab 2 -->
+        {{!-- <input type="radio" name="tabset" id="tab2" aria-controls="tab-review"> --}}
+        <input type="radio" name="tabset" id="tab2">
+        <label for="tab2">Reviews</label>
+
+        <div class="tab-panels">
+            <section id="tab-portfolio" class="tab-panel">
+                <div class="each-portfolio">
+                    {{#each photographer.portfolio}}
+                    <img class="each-photo" src={{this}}>
+                    {{/each}}
+                </div>
+            </section>
+            <section id="tab-review" class="tab-panel">
+                <h2>Reviews</h2>
+                <div class="add-review-container">
+                    {{#if isLoggedIn}}
+                    <form action="/photographers//{{photographer._id}}/solo" method="POST">
+                    <label for="reviews">Give a review to {{photographer.name}}</label>
+                    <textarea type="text" name="review" placeholder="Describe your experience"></textarea>  
+                    <button type="submit">Submit</button>
+                    {{/if}}
+                </form>
+                </div>
+                {{#each photographer.reviews}}
+                    <div class="each-review">
+                        <p class="comment">{{this}}</p>
+                        <p class="commentor">{{user.name}}</p>
+                    </div>
+                {{/each}}
+            </section>
+        </div>
+    </div>
+    </div>
 </div>

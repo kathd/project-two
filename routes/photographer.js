@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const photographerModel = require("../models/Photographer");
+const userModel = require("../models/User")
 const uploader = require("./../config/cloudinary");
 
 

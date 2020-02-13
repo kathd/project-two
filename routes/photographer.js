@@ -87,7 +87,6 @@ router.post('/add',uploader.single("profile_picture"), (req, res)=> {
    
 
 router.get("/:id/delete", (req, res, next) => {
-    console.log("ici ????", req.params);
     
     photographerModel
     .findByIdAndDelete(req.params.id)
@@ -173,33 +172,26 @@ router.post("/:id/edit", uploader.single("profile_picture"), (req, res, next) =>
     })
 })
 
-    router.post("/:id/solo/liked", (req, res, next) => {
-        userModel
-  .findById(req.session.currentUser._id)
-  .then(currentuser => {
+
+router.post("/:id/solo/liked", (req, res, next) => {
+    userModel
+    .findById(req.session.currentUser._id)
+    .then(currentuser => {
     let user = currentuser
     let photographer = req.params.id
     console.log(user)
     console.log(photographer)
-     userModel
-     .update({ _id: user }, { $push: { photogfav: { _id: photographer }}})
-     .then(db => {
-         res.redirect(`/photographers/${req.params.id}/solo`);
-         photographerModel
-         .update({_id : photographer }, { $push : { fans : {_id : user._id}}})
-         .catch((error) => {
-            console.log(error) }
-    
-     )
-     .catch((error) => {
-       console.log(error)
-     })
-
-
+    userModel
+        .update({ _id: user }, { $push: { photogfav: { _id: photographer }}})
+        .then(db => {
+            res.redirect(`/photographers/${req.params.id}/solo`);
+            photographerModel
+            .update({_id : photographer }, { $push : { fans : {_id : user._id}}})
+            .catch((error) => { console.log(error) })
+        })
+        .catch((error) => console.log(error))
+    })
 })
-
-    })
-    })
 
     router.post("/:id/solo/deletereview/:reviewId", (req, res, next) => {
         photographerModel
@@ -213,8 +205,4 @@ router.post("/:id/edit", uploader.single("profile_picture"), (req, res, next) =>
     })
 
 
-
-    module.exports = router;
-
-
-
+module.exports = router;

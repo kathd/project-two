@@ -35,6 +35,10 @@ button color (brick): #B62A3D
     width: 100%;
 }
 
+.form input {
+    background-color: #E8F0FE;
+}
+
 .form input,
 .form button {
     box-sizing: border-box;
@@ -103,11 +107,7 @@ button color (brick): #B62A3D
         width: 300px;
     }
 
-    .form input {
-        background-color: #E8F0FE;
-    }
-
-    .sticky {
+    .sticky-auth {
         position: fixed;
         top: 0;
         width: 100%;

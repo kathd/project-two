@@ -97,12 +97,72 @@ img.user-avatar {
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid #B62A3D;
-    margin: 10px;
+    margin: 20px;
   }
 
   .btn-x {
     padding: 0 3px;
     color: #B62A3D;
     background-color: #fff;
-    /* border: 1px solid; */
+    border: 0.5px solid;
+    margin: 3px;
   }
+
+  /* RESPONSIVE SECTION */
+
+  @media only screen and (max-width: 768px) {
+    .btn-x {
+      display: none;
+    }
+
+    .user-container {
+      padding-top: 3%;
+    }
+
+    img.user-avatar {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #B62A3D;
+  }
+
+  }
+
+  @media only screen and (max-width: 700px) {
+    .user-container {
+        padding-top: 10%;
+      }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .user-container {
+        padding-top: 15%;
+      }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    .user-card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        width: 100%;
+        /* margin: auto; */
+        margin: 20px 10px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .link-card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      width: 100%;
+      margin: 20px 10px;
+      text-align: center;
+      padding: 20px;
+  }
+  }
+  

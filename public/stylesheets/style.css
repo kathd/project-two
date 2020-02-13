@@ -357,11 +357,10 @@ a {
     } */
 
 
-    /* .left-nav ,
-    .right-nav,
-    .center-nav {
+    .left-nav ,
+    .right-nav {
       display: none;
-    } */
+    }
 
     /* .dropbtn {
       display: none;

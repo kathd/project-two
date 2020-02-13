@@ -99,6 +99,7 @@ router.get("/:id/delete", (req, res, next) => {
 router.get("/:id/edit",  (req, res, next) => {
     photographerModel
     .findById(req.params.id)
+    .populate('reviews')
     .then(dbRes => {
       res.render("forms/editph", { 
           photographer: dbRes ,
@@ -115,6 +116,7 @@ router.post("/:id/edit", uploader.single("profile_picture"), (req, res, next) =>
     if (req.file) photographer.profile_picture = req.file.secure_url;
     photographerModel
     .findByIdAndUpdate(req.params.id, photographer)
+    .populate('reviews')
     .then(dbRes => {
             res.redirect("/photographers");
         })
@@ -190,6 +192,17 @@ router.post("/:id/solo/liked", (req, res, next) => {
         .catch((error) => console.log(error))
     })
 })
+
+    router.post("/:id/solo/deletereview/:reviewId", (req, res, next) => {
+        photographerModel
+        .findByIdAndUpdate(req.params.id, {$pull: {reviews : req.params.reviewId}}, {new:true})
+        .then(photograph => {
+            res.redirect(`/photographers/${req.params.id}/solo`)
+        })
+        .catch((error) => {
+            console.log(error)
+          })
+    })
 
 
 module.exports = router;

@@ -106,11 +106,7 @@
       <label for="profile_picture">Profile Picture</label>
         <input id="input-file" type="file"  name="profile_picture" value="{{photographer.profile_picture}}">
 
-        <label for="portfolio">Reviews</label>
-        {{#each photographer.reviews}}
-        <input id="review1" type="text" name="reviews" value={{this}}>
-        {{/each}}
-
+        
 
       <button type="submit">Update Photographer</button>
   

@@ -1,12 +1,12 @@
 #form {
     position: fixed;
     width: inherit;
-    background-color: grey;
+    background-color: rgb(180, 180, 180);
     opacity: 0.5;
     border: solid 0.5px;
     border-radius: 10px;
     box-shadow: 10px 10px 5px 0px rgba(128,128,128,1);
-
+    color: rgb(75, 75, 75);
 }
 #form:hover{
     opacity: 1;
@@ -14,7 +14,10 @@
 
 select {
     display: block;
+}
 
+.checkbox {
+    margin: 5px 0;
 }
 
 label {

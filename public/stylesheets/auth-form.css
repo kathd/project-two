@@ -83,3 +83,36 @@ button color (brick): #B62A3D
     width: 40%;
     text-align: center;
 }
+
+/* RESPONSIVE SECTION */
+
+@media only screen and (max-width: 415px) {
+
+    .middle-logo {
+        border-bottom: 1px solid lightgray;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        position: fixed;
+    }
+
+    .form {
+        margin: 40% auto;
+        width: 300px;
+    }
+
+    .form input {
+        background-color: #E8F0FE;
+    }
+
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1;
+    }
+
+}

@@ -51,6 +51,11 @@ input[type=submit]:hover {
     padding: 10px 30px;
 }
 
+/* .add-review-form {
+  display: flex;
+
+} */
+
 .like-book-container {
     display: flex;
     flex-direction: column;

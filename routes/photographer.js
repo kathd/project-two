@@ -31,26 +31,27 @@ router.get('/', (req, res) => {
     }).catch(error => console.log(error));
 })
 
-
+//AXIOS ROUTE
 router.post('/filter', (req, res) => {
     let matchProfile = [];
-    arrCat = req.body;
-    console.log(arrCat.arr);
-    // console.log(arrCat.arr[0]);
-    photographerModel.find()
+    arrFilter = req.body;
+
+    photographerModel
+    .find()
     .then(photographers => {
-        // console.log(photographers[0].categories)
         photographers.forEach(photographer => {
-            // console.log(photographer.categories)
             photographer.categories.forEach(cat => {
-                if(arrCat.arr.indexOf(cat) !== -1) {
+                if(arrFilter.special.indexOf(cat) !== -1) {
                     if(matchProfile.indexOf(photographer) === -1) {
                         matchProfile.push(photographer)
                     }  
-                    console.log(matchProfile)
                 }
             })
+            if(photographer.location !== arrFilter.lieu && arrFilter.lieu !== "" && matchProfile.indexOf(photographer) !== -1) {
+                matchProfile.splice(matchProfile.indexOf(photographer), 1)
+            }
         })
+
         res.json(matchProfile)
     })
     .catch(dbErr => console.log(dbErr))

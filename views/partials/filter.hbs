@@ -1,4 +1,4 @@
-<form id="form" action="/photographers/add" method="POST">
+<form id="form" method="post">
     <div>
        <label for="price">Price</label>
         <input type="number" name="price" placeholder="700"> 
@@ -13,16 +13,15 @@
 
     <div>
         <label for="categories"> Please select yours specialties</label>
-        <input type="checkbox" name="categories" value="Events"> Events<br>
-        <input type="checkbox" name="categories" value="lifestyle"> Lifestyle<br>
-        <input type="checkbox" name="categories" value="real estate"> Real estate<br>
-        <input type="checkbox" name="categories" value="Portrait">Portrait<br>
-        <input type="checkbox" name="categories" value="real estate"> Packshots and still life<br>
-        <input type="checkbox" name="categories" value="Food"> Food<br>
-        <input type="checkbox" name="categories" value="Mode"> Mode<br>
-        <input type="checkbox" name="categories" value="Advertising"> Advertising 
+        <input class="checkbox" type="checkbox" name="categories" value="events"> Events<br>
+        <input class="checkbox" type="checkbox" name="categories" value="lifestyle"> Lifestyle<br>
+        <input class="checkbox" type="checkbox" name="categories" value="real estate"> Real estate<br>
+        <input class="checkbox" type="checkbox" name="categories" value="portrait"> Portrait<br>
+        <input class="checkbox" type="checkbox" name="categories" value="packshots"> Packshots<br>
+        <input class="checkbox" type="checkbox" name="categories" value="food"> Food<br>
+        <input class="checkbox" type="checkbox" name="categories" value="fashion"> Mode<br>
+        <input class="checkbox" type="checkbox" name="categories" value="advertising"> Advertising 
     </div>
     
-    <button type="submit">Find</button>
 
 </form>

@@ -99,6 +99,7 @@ router.post("/:id/edit", uploader.single("profile_picture"), (req, res, next) =>
     router.get("/:id/solo", (req, res, next ) => {
         photographerModel
         .findById(req.params.id)
+        .populate('fans')
         .then(photographer => { 
             res.render("show-each", { 
                 photographer,
@@ -129,16 +130,22 @@ router.post("/:id/edit", uploader.single("profile_picture"), (req, res, next) =>
      userModel
      .update({ _id: user }, { $push: { photogfav: { _id: photographer }}})
      .then(db => {
-         res.redirect(`/photographers/${req.params.id}/solo`)
-     })
+         res.redirect(`/photographers/${req.params.id}/solo`);
+         photographerModel
+         .update({_id : photographer }, { $push : { fans : {_id : user._id}}})
+         .catch((error) => {
+            console.log(error) }
+    
+     )
      .catch((error) => {
        console.log(error)
      })
 
+
 })
 
     })
-
+    })
 
     module.exports = router;
 

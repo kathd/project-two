@@ -8,8 +8,10 @@
 }
 
 .form-container{
-    width: 30vw;
+    width: 20vw;
+    margin-top: 80px;
 }
+
 
 #all-photographers{
     display: grid;
@@ -18,6 +20,14 @@
     margin: 20px auto;
     grid-column-gap: 30px;
     grid-row-gap: 40px;
+}
+
+#all-photographers>a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: rgb(94, 94, 94);
+    margin: 40px 0;
 }
 
 .photographer-profile{

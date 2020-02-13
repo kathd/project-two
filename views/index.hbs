@@ -7,10 +7,13 @@
                 <option value="Paris">Paris</option>
                 <option value="London">London</option>
                 <option value="Berlin">Berlin</option>
-            </select>   
+            </select>
             <button type="submit">Submit</button>
         </form>
     </div>
+    {{!-- <div class="join-us">
+        <p>Want to join our pool of photographers? <a class="hvr-pulse-grow" href="#contact">Join us!</a></p>
+    </div> --}}
 </div>
 <div id="second-part">
     <div class="visual-container">
@@ -25,129 +28,13 @@
             </div>
         </div>
         {{/each}}
-
-        {{!-- <div class="box">
-            <img class="img-home" src="images/Photographers-Pictures/Klaudia-Iga/KI8.jpg">
-            <div class="middle">
-                <div class="text">
-                    Klaudia Iga<br><span>See more</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <img class="img-home" src="images/Photographers-Pictures/Anais-Da-Silva/ADS2.png">
-            <div class="middle">
-                <div class="text">
-                    Anais Da Silva<br><span>See more</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <img class="img-home" src="images/Photographers-Pictures/Caspar-Miskin/CM4.png">
-            <div class="middle">
-                <div class="text">
-                    Caspar Miskin<br><span>See more</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <img class="img-home" src="images/Photographers-Pictures/Nora-Hegedus/NH4.jpg">
-            <div class="middle">
-                <div class="text">
-                    Nora Hegedus<br><span>See more</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <img class="img-home" src="images/Photographers-Pictures/Thierry-Van-Biesen/TVB4.png">
-            <div class="middle">
-                <div class="text">
-                    Thierry Van Biesen<br><span>See more</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <img class="img-home" src="images/Photographers-Pictures/Jean-Sébastien-Poirier/JSP1.png">
-            <div class="middle">
-                <div class="text">
-                    Jean-Sébastien Poirier<br><span>See more</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <img class="img-home" src="images/Photographers-Pictures/Caspar-Miskin/CM1.png">
-            <div class="middle">
-                <div class="text">
-                    Caspar Miskin<br><span>See more</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <img class="img-home" src="images/Photographers-Pictures/Amy-Ta/AT6.png">
-            <div class="middle">
-                <div class="text">
-                    Amy Ta<br><span>See more</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <img class="img-home" src="images/Photographers-Pictures/Thierry-Van-Biesen/TVB5.png">
-            <div class="middle">
-                <div class="text">
-                    Thierry Van Biesen<br><span>See more</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <img class="img-home" src="images/Photographers-Pictures/Anais-Da-Silva/ADS6.png">
-            <div class="middle">
-                <div class="text">
-                    Anais Da Silva<br><span>See more</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <img class="img-home" src="images/Photographers-Pictures/Nora-Hegedus/NH1.jpg">
-            <div class="middle">
-                <div class="text">
-                    Nora Hegedus<br><span>See more</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <img class="img-home" src="images/Photographers-Pictures/Klaudia-Iga/KI3.jpg">
-            <div class="middle">
-                <div class="text">
-                    Klaudia Iga<br><span>See more</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <img class="img-home" src="images/Photographers-Pictures/Amy-Ta/AT3.png">
-            <div class="middle">
-                <div class="text">
-                    Ami Ta<br><span>See more</span>
-                </div>
-            </div>
-        </div> --}}
     </div>
 </div>
 
-<footer id="about">
-    <h2>ABOUT US</h2>
-    <div id="sub-footer">
+<div id="about">
+    <div class="about-content">
+        <h2>ABOUT US</h2>
+        <div id="sub-about">
         <div class="profile">
             <!-- FIRST PROFILE -->
             <div class="pp-container">
@@ -221,6 +108,8 @@
                 <img src="images/About/IMG_5668.jpg">
             </div>
         </div>
+    </div>
+    
 
     </div>
 
@@ -231,4 +120,10 @@
     </div>
 
 
-</footer>
+</div>
+<div id="contact">
+    <h2>Join our pool of photographers!</h2>
+    <form action="mailto:admin@cliche.com" method="post" enctype="text/plain">
+        <input type="submit" value="EMAIL US">
+    </form>
+</div>

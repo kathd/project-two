@@ -53,10 +53,12 @@
                     <h2>Reviews <b class="impt">({{photographer.reviews.length}})</b></h2>
                     <div class="add-review-container">
                         {{#if isLoggedIn}}
-                        <form action="/photographers//{{photographer._id}}/solo" method="POST">
+                        <form class="add-review-form" action="/photographers//{{photographer._id}}/solo" method="POST">
                             <label for="reviews">Give a review to {{photographer.name}}</label>
                             <textarea type="text" name="review" placeholder="Describe your experience"></textarea>
-                            <button class="each-btn" type="submit">Add</button>
+                            <div>
+                              <button class="each-btn" type="submit">Add</button>  
+                            </div>
                             {{/if}}
                         </form>
                     </div>

@@ -39,7 +39,7 @@
             <!-- Tab 2 -->
             {{!-- <input type="radio" name="tabset" id="tab2" aria-controls="tab-review"> --}}
             <input type="radio" name="tabset" id="tab2">
-            <label for="tab2">Reviews</label>
+            <label for="tab2">Reviews ({{photographer.reviews.length}})</label>
 
             <div class="tab-panels">
                 <section id="tab-portfolio" class="tab-panel">
@@ -50,7 +50,7 @@
                     </div>
                 </section>
                 <section id="tab-review" class="tab-panel">
-                    <h2>Reviews</h2>
+                    <h2>Reviews <b class="impt">({{photographer.reviews.length}})</b></h2>
                     <div class="add-review-container">
                         {{#if isLoggedIn}}
                         <form action="/photographers//{{photographer._id}}/solo" method="POST">

@@ -4,6 +4,7 @@
         <div>
             <h1>{{photographer.name}}</h1>
         </div>
+        
         <div>
             <p>{{photographer.description}}</p>
         </div>
@@ -13,19 +14,20 @@
         <div>
             <p>Located at <b class="impt">{{photographer.location}}</b></p>
         </div>
-        <div>
+        <div class="like-book-container">
             {{#if isLoggedIn}}
                 <form class="like-wrapper" action="/photographers/{{photographer._id}}/solo/liked" method="POST">
                     <button class="each-like" type="submit"><i class="fas fa-heart fa-2x"></i></button>
                 </form>
-
+            {{/if}}
+            <div class="like-number-wrapper">
+                <p>This photographer has <b class="impt">{{photographer.fans.length}}</b> likes</p>
+            </div>
+            {{#if isLoggedIn}}
             <form action="mailto:{{photographer.email}}" method="post" enctype="text/plain">
                 <input type="submit" value="BOOK">
             </form>
-            {{/if}}
-            <div>
-                {{photographer.fans.length}} peoples already like this photographer !
-            </div>
+            {{/if}}  
         </div>
     </div>
 

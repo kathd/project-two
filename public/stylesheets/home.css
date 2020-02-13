@@ -4,7 +4,8 @@
 }
 
 .intro-container {
-  background-image: url(../images/ben-blennerhassett-lw4jM1smaCs-unsplash.jpg);
+  background-color: #000;
+  /* background-image: url(../images/Photographers-Pictures/Amy-Ta/Paysages/AT\ Horizontale4.png); */
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 90px;;
@@ -12,6 +13,7 @@
 
 
 #second-part {
+  /* height: 1300px; */
   padding: 20px;
 }
 
@@ -111,16 +113,18 @@
 
 
 
-/* FOOTER ABOUT DISPLAY */
-#about{
+/* ABOUT DISPLAY */
+#about {
+  height: 650px;
   text-align: center;
-  margin-top: 50px;
+  padding-top: 10%;
 }
 
-#sub-footer {
+#sub-about {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  /* margin-top: 10%; */
 }
 
 .profile {
@@ -167,4 +171,37 @@
 .self-container img{
   width: 30%;
   height: auto;
+}
+
+/* CONTACT US */
+
+#contact {
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10%;
+}
+
+#contact h2 {
+  color: #000;
+  font-size: 3em;
+  /* text-shadow: 2px 2px gray; */
+  margin-bottom: 40px;
+}
+
+input[type=submit] {
+  color: #fff;
+  font-size: 16px;
+  background-color: #B62A3D;
+  border: 1px solid #B62A3D;
+  border-radius: 10px;
+  padding: 10px 30px;
+  margin: 20px;
+}
+
+input[type=submit]:hover {
+  background-color: #fff;
+  color: #B62A3D;
 }

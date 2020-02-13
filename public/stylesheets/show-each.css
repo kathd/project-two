@@ -1,3 +1,5 @@
+@import url("hover-min.css");
+
 .profile-page {
     display: flex;
     flex-direction: column;
@@ -32,11 +34,47 @@ input[type=submit] {
     border: 1px solid #B62A3D;
     border-radius: 10px;
     padding: 10px 30px;
+    margin: 20px;
 }
 
 input[type=submit]:hover {
     background-color: #fff;
     color: #B62A3D;
+}
+
+.each-btn {
+    color: #fff;
+    /* font-size: 16px; */
+    background-color: #B62A3D;
+    border: 1px solid #B62A3D;
+    border-radius: 10px;
+    padding: 10px 30px;
+}
+
+.like-book-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.each-like {
+    
+    color: #B62A3D;
+    font-size: 16px;
+    margin: 10px auto;
+    border: none;
+    display: flex;
+    justify-content: center;
+
+}
+
+.fa-heart {
+    color: #B62A3D;
+}
+
+.fa-heart:hover {
+    opacity: 0.7;
 }
 
 .each-photo {
@@ -48,6 +86,7 @@ input[type=submit]:hover {
 }
 
 .each-review {
+    font-size: 12px;
     border: 1px solid lightgray;
     border-radius: 20px;
     min-height: 80px;
@@ -68,6 +107,7 @@ input[type=submit]:hover {
 
 .add-review-container {
     width: 100%;
+    margin: 10px 0;
 }
 
 
@@ -75,7 +115,8 @@ input[type=submit]:hover {
 .add-review-container textarea {
     width: 100%;
     min-height: 80px;
-    margin: 20px 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border-radius: 20px;
     border: 1px solid #B62A3D;
     padding: 10px;
@@ -153,4 +194,39 @@ input[type=submit]:hover {
     width: 100%;
     padding: 30px 0;
     border-top: 1px solid #ccc;
+  }
+
+  /* PULSE GROW HOVER */
+
+  /* Pulse Grow */
+@-webkit-keyframes hvr-pulse-grow {
+    to {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+  @keyframes hvr-pulse-grow {
+    to {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+  .hvr-pulse-grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  }
+  .hvr-pulse-grow:hover, .hvr-pulse-grow:focus, .hvr-pulse-grow:active {
+    -webkit-animation-name: hvr-pulse-grow;
+    animation-name: hvr-pulse-grow;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
   }

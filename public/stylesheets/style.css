@@ -159,7 +159,7 @@ a {
 /* INTRO PAGE */
 
 .intro-container {
-  height: 650px;
+  height: 750px;
   display: flex;
   flex-direction: column;
   align-items: center;

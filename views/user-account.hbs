@@ -17,9 +17,14 @@
                 <h3>Your favorite photographers</h3>
                 <div class="linked-photog-list">
                     {{#each user.photogfav}}
+                    <div>
                     <a>
                         {{this.name}}
                     </a>
+                    <form action="/account/{{this._id}}/remove" method="POST">
+                    <button type="submit">Remove</button>
+                    </form>
+                    </div>
                     {{/each}}
                 </div>
             </div>

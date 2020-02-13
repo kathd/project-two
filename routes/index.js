@@ -34,6 +34,23 @@ router.get('/account', function(req, res, next) {
   .catch(err => console.error("OH no, db err :", err));
 });
 
+router.post('/account/:id/remove', function(req, res, next) {
+  photographerModel
+  .findByIdAndUpdate(req.params.id, { $pull: { fans : req.session.currentUser._id}}, {new:true})
+  .then(photographer => { 
+    debugger
+    userModel
+    .findByIdAndUpdate(req.session.currentUser._id, { $pull : { photogfav : req.params.id}},{new:true})
+    .then(user => {
+      debugger
+      res.redirect('/account')
+    })
+    .catch(err => console.error("OH no, db err :", err));
+  })
+  .catch(err => console.error("OH no, db err :", err));
+})
+
+
 router.get('/account/edit', function(req, res, next) {
   userModel
   .findById(req.session.currentUser._id)

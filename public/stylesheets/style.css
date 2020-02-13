@@ -233,11 +233,6 @@ a {
 }
 
 
-
-/* SMALLER SCREENS - RESPONSIVE SECTION */
-
-@media (max-width: 768px) {}
-
 /* === SELECT === */
 
 .select-css {
@@ -343,3 +338,41 @@ a {
     -webkit-animation-direction: alternate;
     animation-direction: alternate;
   }
+
+  /* RESPONSIVE SECTION */
+
+  @media only screen and (max-width: 768px) {
+
+    /* NAVBAR */
+
+    #nav-main {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    #nav-main a {
+      font-size: 10px;
+      text-decoration: none;
+      color: #000;
+    }
+
+    .center-nav img {
+      width: 100px;
+    }
+
+    .right-nav {
+      /* width: 25%; */
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    /*  */
+
+
+}

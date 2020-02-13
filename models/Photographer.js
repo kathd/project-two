@@ -14,6 +14,7 @@ const photographerSchema = new Schema({
     },
     location: {
         type: String,
+        enum: ["Paris", "London", "Madrid", "Berlin"]
     },
     email: {
         type: String,

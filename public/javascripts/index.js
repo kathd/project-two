@@ -1,8 +1,9 @@
 const apiHandler = axios.create({
-    baseURL: "http://localhost:2000"
+    baseURL: `http://localhost:2000`
 })
 
 const allCheckboxes = document.querySelectorAll(".checkbox");
+const loc = document.querySelector("#loc");
 const profilContainer = document.querySelector("#all-photographers");
 let profilArr = [];
 
@@ -11,31 +12,29 @@ let profilArr = [];
 function showFiltered() {
     // const checkedBox = document.querySelectorAll(".checkbox:checked");
     let catFilter = [];
-    let allCat = []
+    let allCat = [];
 
     allCheckboxes.forEach(checkbox => {
         if (checkbox.checked) catFilter.push(checkbox.getAttribute("value"))
         allCat.push(checkbox.getAttribute("value"))
     });
-    console.log(catFilter)
-    console.log(allCat)
 
     if (catFilter.length === 0) {
-        getMatchInfo(allCat);
+        getMatchInfo(loc.value, allCat);
     } else {
-        getMatchInfo(catFilter);
+        getMatchInfo(loc.value, catFilter);
     }
 
 }
 
-function getMatchInfo(arr) {
+function getMatchInfo(lieu, special) {
     apiHandler
     .post("/photographers/filter", {
-        arr
+        lieu,
+        special
     })
     .then(apiRes => {
             profilArr = apiRes.data;
-            console.log(profilArr)
             postInfos(profilArr);
     })
     .catch(apiErr => {
@@ -45,11 +44,19 @@ function getMatchInfo(arr) {
 
 function postInfos(profil) {
     profilContainer.innerHTML = "";
-    console.log(profilArr)
     profilArr.forEach(pro => {
+        let link = document.createElement("a");
+        let linkAttr = document.createAttribute("href");
+        linkAttr.value = `/photographers/${pro._id}/solo`;
+        link.setAttributeNode(linkAttr);
+        
         let profilBox = document.createElement("div")
         profilBox.classList.add("photographer-profile")
-        profilContainer.appendChild(profilBox)
+
+        profilContainer.appendChild(link)
+        link.appendChild(profilBox)
+
+
         profilBox.innerHTML += `
             <div class="portfolio-block">
                 <div>
@@ -82,11 +89,11 @@ function postInfos(profil) {
             </div>
         `
         let catList = profilBox.querySelector(".cat-list")
-        pro.categories.forEach(cat => {
-            console.log(cat)    
+        pro.categories.forEach(cat => {  
             catList.innerHTML += `<li>${cat}</li>`
         })
     })
 }
 
 allCheckboxes.forEach(checkbox => checkbox.onclick = showFiltered)
+loc.onchange = showFiltered

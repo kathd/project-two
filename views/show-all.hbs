@@ -8,44 +8,46 @@
             <div id="all-photographers">
 
                 {{#unless photographers}}
-                <a>sorry not photographers yet!</a>
+                <p>sorry not photographers yet!</p>
                 {{/unless}}
                 {{#each photographers}}
-                <div class="photographer-profile">
-                    {{!-- portfolio layout --}}
-                    <div class="portfolio-block">
-                        <div>
-                           <img class="img-portfolio" src="{{this.portfolio.[0]}}"> 
+                <a href="/photographers/{{this._id}}/solo">
+                    <div class="photographer-profile">
+                        {{!-- portfolio layout --}}
+                        <div class="portfolio-block">
+                            <div>
+                                <img class="img-portfolio" src="{{this.portfolio.[0]}}"> 
+                            </div>
+                            <div>
+                                <img class="img-portfolio" src="{{this.portfolio.[1]}}">
+                            </div>
+                            <div>
+                                <img class="img-portfolio" src="{{this.portfolio.[2]}}">
+                            </div>
+                            <div>
+                                <img class="img-portfolio" src="{{this.portfolio.[3]}}">
+                            </div>
                         </div>
-                        <div>
-                            <img class="img-portfolio" src="{{this.portfolio.[1]}}">
-                        </div>
-                        <div>
-                            <img class="img-portfolio" src="{{this.portfolio.[2]}}">
-                        </div>
-                        <div>
-                            <img class="img-portfolio" src="{{this.portfolio.[3]}}">
+                        <hr style="width: 60%; margin: 20px auto;">
+                        <div class="photographers-infos">
+                            <div class="pp">
+                                <img class="tete" src="{{this.profile_picture}}">
+                            </div>
+                            <div class="text-profile">
+                                <h3>{{this.name}}</h3>
+                                <p>Price : {{this.price}}€ per day</p>
+                                <p>Location : {{this.location}}</p>
+                                <p>Speciality : 
+                                    <ul id="cat-list">
+                                        {{#each this.categories}}
+                                        <li>{{this}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <hr style="width: 60%; margin: 20px auto;">
-                    <div class="photographers-infos">
-                        <div class="pp">
-                            <img class="tete" src="{{this.profile_picture}}">
-                        </div>
-                        <div class="text-profile">
-                            <h3>{{this.name}}</h3>
-                            <p>Price : {{this.price}}€ per day</p>
-                            <p>Location : {{this.location}}</p>
-                            <p>Speciality : 
-                                <ul id="cat-list">
-                                    {{#each this.categories}}
-                                    <li>{{this}}</li>
-                                    {{/each}}
-                                </ul>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                </a>
                 {{/each}}
             </div>
         </div>

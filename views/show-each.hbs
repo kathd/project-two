@@ -55,7 +55,7 @@
                         {{#if isLoggedIn}}
                         <form class="add-review-form" action="/photographers//{{photographer._id}}/solo" method="POST">
                             <label for="reviews">Give a review to {{photographer.name}}</label>
-                            <textarea type="text" name="review" placeholder="Describe your experience"></textarea>
+                            <textarea type="text" name="content" placeholder="Describe your experience"></textarea>
                             <div>
                               <button class="each-btn" type="submit">Add</button>  
                             </div>

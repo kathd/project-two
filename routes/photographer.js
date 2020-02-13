@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const photographerModel = require("../models/Photographer");
 const userModel = require("../models/User")
+const reviewModel = require("../models/Review")
 const uploader = require("./../config/cloudinary");
 
 
@@ -127,7 +128,10 @@ router.post("/:id/edit", uploader.single("profile_picture"), (req, res, next) =>
         photographerModel
         .findById(req.params.id)
         .populate('fans')
+        .populate( {path :'reviews', 
+         populate: { path :'user', model: 'User'}})
         .then(photographer => { 
+            debugger
             res.render("show-each", { 
                 photographer,
                 css: ['show-each.css']
@@ -136,15 +140,35 @@ router.post("/:id/edit", uploader.single("profile_picture"), (req, res, next) =>
         .catch(dbErr => console.error("OH no, db err :", dbErr));
     })
  
+    // router.post("/:id/solo", (req, res, next ) => {
+    //     const review  = req.body.review;
+    //     console.log(review)
+    //     photographerModel
+    //     .findByIdAndUpdate(req.params.id, {$push: {"reviews": review}}  )
+    //     .then( db => res.redirect(`/photographers/${req.params.id}/solo`) )
+    //     .catch(dbErr => console.error("OH no, db err :", dbErr));
+
+    // })
+
     router.post("/:id/solo", (req, res, next ) => {
-        const review  = req.body.review;
-        console.log(review)
-        photographerModel
-        .findByIdAndUpdate(req.params.id, {$push: {"reviews": review}}  )
-        .then( db => res.redirect(`/photographers/${req.params.id}/solo`) )
-        .catch(dbErr => console.error("OH no, db err :", dbErr));
+        const content = req.body.content
+        const photographer = req.params.id
+        const user = req.session.currentUser._id
+        const newReview = {content, photographer, user }
+            reviewModel
+            .create(newReview)
+            .then( review => {
+                photographerModel
+                .findByIdAndUpdate(photographer, { $push: { reviews : review._id }}, {new:true})
+                .then(dbRes => {
+                    res.redirect(`/photographers/${req.params.id}/solo`)
+                .catch(dbErr => console.error("OH no, db err :", dbErr)
+                )
+                 })
+            .catch(dbErr => console.error("OH no, db err :", dbErr))
 
     })
+})
 
     router.post("/:id/solo/liked", (req, res, next) => {
         userModel
@@ -174,7 +198,7 @@ router.post("/:id/edit", uploader.single("profile_picture"), (req, res, next) =>
     })
     })
 
-    
+
 
     module.exports = router;
 

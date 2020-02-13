@@ -55,15 +55,15 @@
                         {{#if isLoggedIn}}
                         <form action="/photographers//{{photographer._id}}/solo" method="POST">
                             <label for="reviews">Give a review to {{photographer.name}}</label>
-                            <textarea type="text" name="review" placeholder="Describe your experience"></textarea>
+                            <textarea type="text" name="content" placeholder="Describe your experience"></textarea>
                             <button class="each-btn" type="submit">Add</button>
                             {{/if}}
                         </form>
                     </div>
                     {{#each photographer.reviews}}
                     <div class="each-review">
-                        <p class="comment">{{this}}</p>
-                        <p class="commentor">{{user.name}}</p>
+                        <p class="comment">{{this.content}}</p>
+                        <p class="commentor">- {{this.user.firstname}} {{this.user.lastname}}</p>
                     </div>
                     {{/each}}
                 </section>

@@ -23,7 +23,7 @@ const photographerSchema = new Schema({
         default: "/images/emtpy-profile.png"
     },
     reviews: {
-        type : [String]
+        type : [{ type : Schema.Types.ObjectId, ref: 'Review' }]
     } ,
     portfolio: [String],
     categories: {

@@ -39,6 +39,31 @@ input[type=submit]:hover {
     color: #B62A3D;
 }
 
+.each-btn {
+    color: #fff;
+    /* font-size: 16px; */
+    background-color: #B62A3D;
+    border: 1px solid #B62A3D;
+    border-radius: 10px;
+    padding: 10px 30px;
+}
+
+.each-like {
+    margin: 10px auto;
+    border: none;
+    display: flex;
+    justify-content: center;
+
+}
+
+.fa-heart {
+    color: #B62A3D;
+}
+
+.fa-heart:hover {
+    opacity: 0.7;
+}
+
 .each-photo {
     width:30%;
 }
@@ -48,6 +73,7 @@ input[type=submit]:hover {
 }
 
 .each-review {
+    font-size: 12px;
     border: 1px solid lightgray;
     border-radius: 20px;
     min-height: 80px;
@@ -68,6 +94,7 @@ input[type=submit]:hover {
 
 .add-review-container {
     width: 100%;
+    margin: 10px 0;
 }
 
 
@@ -75,7 +102,8 @@ input[type=submit]:hover {
 .add-review-container textarea {
     width: 100%;
     min-height: 80px;
-    margin: 20px 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border-radius: 20px;
     border: 1px solid #B62A3D;
     padding: 10px;

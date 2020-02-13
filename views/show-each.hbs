@@ -15,9 +15,10 @@
         </div>
         <div>
             {{#if isLoggedIn}}
-            <form action="/photographers//{{photographer._id}}/solo/liked" method="POST">
-                <button type="submit">Like</button>
-            </form>
+                <form class="like-wrapper" action="/photographers/{{photographer._id}}/solo/liked" method="POST">
+                    <button class="each-like" type="submit"><i class="fas fa-heart fa-2x"></i></button>
+                </form>
+
             <form action="mailto:{{photographer.email}}" method="post" enctype="text/plain">
                 <input type="submit" value="BOOK">
             </form>
@@ -26,42 +27,42 @@
     </div>
 
     <div class="tabset-container">
-    <div class="tabset">
-        <!-- Tab 1 -->
-        <input type="radio" name="tabset" id="tab1" aria-controls="tab-portfolio" checked>
-        <label for="tab1">Portfolio</label>
-        <!-- Tab 2 -->
-        {{!-- <input type="radio" name="tabset" id="tab2" aria-controls="tab-review"> --}}
-        <input type="radio" name="tabset" id="tab2">
-        <label for="tab2">Reviews</label>
+        <div class="tabset">
+            <!-- Tab 1 -->
+            <input type="radio" name="tabset" id="tab1" aria-controls="tab-portfolio" checked>
+            <label for="tab1">Portfolio</label>
+            <!-- Tab 2 -->
+            {{!-- <input type="radio" name="tabset" id="tab2" aria-controls="tab-review"> --}}
+            <input type="radio" name="tabset" id="tab2">
+            <label for="tab2">Reviews</label>
 
-        <div class="tab-panels">
-            <section id="tab-portfolio" class="tab-panel">
-                <div class="each-portfolio">
-                    {{#each photographer.portfolio}}
-                    <img class="each-photo" src={{this}}>
-                    {{/each}}
-                </div>
-            </section>
-            <section id="tab-review" class="tab-panel">
-                <h2>Reviews</h2>
-                <div class="add-review-container">
-                    {{#if isLoggedIn}}
-                    <form action="/photographers//{{photographer._id}}/solo" method="POST">
-                    <label for="reviews">Give a review to {{photographer.name}}</label>
-                    <textarea type="text" name="review" placeholder="Describe your experience"></textarea>  
-                    <button type="submit">Add</button>
-                    {{/if}}
-                </form>
-                </div>
-                {{#each photographer.reviews}}
+            <div class="tab-panels">
+                <section id="tab-portfolio" class="tab-panel">
+                    <div class="each-portfolio">
+                        {{#each photographer.portfolio}}
+                        <img class="each-photo" src={{this}}>
+                        {{/each}}
+                    </div>
+                </section>
+                <section id="tab-review" class="tab-panel">
+                    <h2>Reviews</h2>
+                    <div class="add-review-container">
+                        {{#if isLoggedIn}}
+                        <form action="/photographers//{{photographer._id}}/solo" method="POST">
+                            <label for="reviews">Give a review to {{photographer.name}}</label>
+                            <textarea type="text" name="review" placeholder="Describe your experience"></textarea>
+                            <button class="each-btn" type="submit">Add</button>
+                            {{/if}}
+                        </form>
+                    </div>
+                    {{#each photographer.reviews}}
                     <div class="each-review">
                         <p class="comment">{{this}}</p>
                         <p class="commentor">{{user.name}}</p>
                     </div>
-                {{/each}}
-            </section>
+                    {{/each}}
+                </section>
+            </div>
         </div>
-    </div>
     </div>
 </div>

@@ -14,16 +14,18 @@
                 <p><a class="btn-edit" href="/account/edit">Edit</a></p> 
             </div>
             <div class="link-card">
-                <h3>Your favorite photographers</h3>
-                <div class="linked-photog-list">
+                <h3>Photographers you like:</h3>
+                <div id="linked-wrapper">
                     {{#each user.photogfav}}
-                    <div>
-                    <a>
-                        {{this.name}}
-                    </a>
-                    <form action="/account/{{this._id}}/remove" method="POST">
-                    <button type="submit">Remove</button>
-                    </form>
+                    <div class="each-liked-wrapper">
+                        <a href="/photographers/{{this._id}}/solo">
+                            <img class="liked-img" src="{{this.profile_picture}}" alt="{{this.name}}">
+                            <p>{{this.name}}</p>
+                        </a>
+                        <form action="/account/{{this._id}}/remove" method="POST">
+                            {{!-- <button type="submit"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button> --}}
+                            <button class="btn-x" type="submit">x</button>
+                        </form>
                     </div>
                     {{/each}}
                 </div>

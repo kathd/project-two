@@ -30,7 +30,7 @@
     margin: 10px;
 }
 
-.user-avatar {
+img.user-avatar {
     width: 200px;
     height: 200px;
     object-fit: cover;
@@ -70,4 +70,39 @@
   .btn-edit:hover, a:hover {
     background-color: #fff;
     color: #B62A3D;
+  }
+
+  /* LIKED/LINKED SECTION */
+
+  div#linked-wrapper {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  div#linked-wrapper a {
+    text-decoration: none;
+
+  }
+
+  /* #linked-wrapper div {
+    margin: 10px;
+  } */
+
+  img.liked-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #B62A3D;
+    margin: 10px;
+  }
+
+  .btn-x {
+    padding: 0 3px;
+    color: #B62A3D;
+    background-color: #fff;
+    /* border: 1px solid; */
   }

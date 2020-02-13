@@ -15,7 +15,7 @@ const photographers = [
         email : "tvb@gmail.com",
         location : "Paris",
         profile_picture	: "/images/Photographers-Pictures/Thierry-Van-Biesen/profilepic/tvbPp.png",
-        reviews	: ["TVB is an awesome photographer"]
+        // reviews	: ["TVB is an awesome photographer"]
 
     },
      {
@@ -27,7 +27,7 @@ const photographers = [
          email : "contact@anaisdasilva.fr",
          location : "Paris",
          profile_picture : "/images/Photographers-Pictures/Anais-Da-Silva/profilepic/ADS-Pp.png",
-         reviews : ["Anais is an awesome photographer"]
+        //  reviews : ["Anais is an awesome photographer"]
      },
      {
          name : "Amy Ta",
@@ -38,7 +38,7 @@ const photographers = [
          email : "amyta@gmail.com",
          location : "Paris",
          profile_picture : "/images/Photographers-Pictures/Amy-Ta/profilepic/AT-Pp.png",
-         reviews : ["Amy is an awesome photographer"]
+        //  reviews : ["Amy is an awesome photographer"]
 
      },
      {
@@ -50,19 +50,19 @@ const photographers = [
          email : "jbp@gmail.com",
          location : "Paris",
          profile_picture : "/images/Photographers-Pictures/Jean-Sébastien-Poirier/profilepic/JSP-Pp.jpg",
-         reviews : ["JSP is an awesome photographer"]
+        //  reviews : ["JSP is an awesome photographer"]
      },
-    //  {
-    //      name : "Caspar Miskin",
-    //      description : "Former chef de cuisine now turned photographer, specialized in working with gastronomy. With my Scandinavian background, then i am inspired by simplicity and minimalism which often translates into my work. Now based in Paris where i am currently working as a freelance",
-    //      price : 800
-    //      portfolio :
-    //      categories : ["food", "packshots & still life", "advertising"],
-    //      email : "casparm@gmail.com",
-    //      location : "Paris",
-    //      profile_picture : 
-    //      reviews : 
-    //  },
+     {
+         name : "Caspar Miskin",
+         description : "Former chef de cuisine now turned photographer, specialized in working with gastronomy. With my Scandinavian background, then i am inspired by simplicity and minimalism which often translates into my work. Now based in Paris where i am currently working as a freelance",
+         price : 800,
+        //  portfolio :
+         categories : ["food", "packshots", "advertising"],
+         email : "casparm@gmail.com",
+         location : "Paris",
+        //  profile_picture : ,
+        //  reviews : 
+     }
     //  {
     //      name : "Nora Hegedus",
     //      description : "Nora Hegedüs is a Franco-Hungarian photographer and director who graduated from the French Louis-Lumière college. Practicing staged photography, she shows deep interest in social issues, especially in issues concerning women’s status. She has been working on interaction between photography, video and music for a while and she regularly cooperates with musicians.",

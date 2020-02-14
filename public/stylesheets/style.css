@@ -218,6 +218,15 @@ a {
   text-decoration: none;
 }
 
+.quote,
+.creator,
+.network,
+.favourite {
+  text-align: center;
+  margin-bottom: 10px;
+
+}
+
 
 /* ===== OTHER PAGES ===== */
 

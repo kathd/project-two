@@ -36,6 +36,13 @@
   max-width: 100%;
 }
 
+.pp-container>img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 @media (max-width: 1300px) {
   .visual-container {
     columns: 3;
@@ -115,9 +122,9 @@
 
 /* ABOUT DISPLAY */
 #about {
-  height: 650px;
+  height: auto;
   text-align: center;
-  padding-top: 10%;
+  padding-top: 5%;
 }
 
 #sub-about {
@@ -157,7 +164,7 @@
   justify-content: space-evenly;
 }
 .network i {
-  font-size: 40px;
+  font-size: 20px;
 }
 
 .favourite{
@@ -176,12 +183,15 @@
 /* CONTACT US */
 
 #contact {
-  height: 750px;
+  border-top: solid 0.5px;
+  border-bottom: solid 0.5px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10%;
+  padding: 5%;
+  margin: 0 10%;
 }
 
 #contact h2 {

@@ -170,16 +170,16 @@ button color (brick): #B62A3D
 
 @media only screen and (max-width: 768px) {
 
+    .pages {
+        padding-top: 40px;
+    }
+
     div.td-profile {
         display: flex;
         flex-direction: column;
         text-align: center;
         justify-content: center;
         /* padding: 10px; */
-    }
-
-    h3.manage-title {
-        font-size: 1em;
     }
 
     img.row-pic {

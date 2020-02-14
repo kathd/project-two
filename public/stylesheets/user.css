@@ -80,6 +80,7 @@ img.user-avatar {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: center;
   }
 
   div#linked-wrapper a {
@@ -103,21 +104,29 @@ img.user-avatar {
   .btn-x {
     padding: 0 3px;
     color: #B62A3D;
+    font-size: 10px;
     background-color: #fff;
-    border: 0.5px solid;
+    /* border: 0.5px solid; */
     margin: 3px;
   }
 
   /* RESPONSIVE SECTION */
 
+  @media only screen and (max-width: 980) {
+    .pages {
+      padding-top: 60%;
+    }
+  }
+
   @media only screen and (max-width: 768px) {
-    .btn-x {
-      display: none;
+
+    .pages {
+      padding-top: 8%;
     }
 
-    .user-container {
-      padding-top: 3%;
-    }
+    /* .btn-x {
+      display: none;
+    } */
 
     img.user-avatar {
       width: 120px;
@@ -130,9 +139,6 @@ img.user-avatar {
   }
 
   @media only screen and (max-width: 700px) {
-    .user-container {
-      padding-top: 10%;
-    }
 
     .cards {
       display: flex;
@@ -163,7 +169,7 @@ img.user-avatar {
 
   @media only screen and (max-width: 500px) {
     .user-container {
-        padding-top: 15%;
+        padding-top: 10%;
       }
   }
   

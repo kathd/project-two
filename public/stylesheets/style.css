@@ -345,7 +345,7 @@ a {
 
   /* RESPONSIVE SECTION */
 
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 1041px) {
 
     /* NAVBAR */
 
@@ -361,7 +361,7 @@ a {
 
     #nav-main {
       width: 100%;
-      font-size: 18px;
+      font-size: 20px;
       /* position: relative; */
       /* display: flex; */
       /* flex-direction: column; */
@@ -395,7 +395,7 @@ a {
     }
 
     #logo img {
-      width: 300px;
+      width: 200px;
     }
 
     .navbar-toggle {

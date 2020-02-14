@@ -36,6 +36,7 @@ button color (brick): #B62A3D
 .user-form input[type=number],
 .user-form input[type=email],
 .user-form button {
+  background-color: #E8F0FE;
   box-sizing: border-box;
   font-size: 14px;
   outline: 0;

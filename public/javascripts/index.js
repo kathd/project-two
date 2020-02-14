@@ -1,5 +1,5 @@
 const apiHandler = axios.create({
-    baseURL: `http://localhost:2000`
+    baseURL: `https://cliche-app.herokuapp.com/`
 })
 
 const allCheckboxes = document.querySelectorAll(".checkbox");

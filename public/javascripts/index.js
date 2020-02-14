@@ -8,11 +8,11 @@ const profilContainer = document.querySelector("#all-photographers");
 let profilArr = [];
 
 
-
 function showFiltered() {
     // const checkedBox = document.querySelectorAll(".checkbox:checked");
     let catFilter = [];
     let allCat = [];
+    console.log("hey")
 
     allCheckboxes.forEach(checkbox => {
         if (checkbox.checked) catFilter.push(checkbox.getAttribute("value"))
@@ -97,3 +97,28 @@ function postInfos(profil) {
 
 allCheckboxes.forEach(checkbox => checkbox.onclick = showFiltered)
 loc.onchange = showFiltered
+
+//FILTER DISPLAY
+let filterBtn = document.getElementById("filterDisplay");
+let filterBar = document.getElementById("form")
+console.log(filterBtn)
+
+function showFilterBar(){
+    if(filterBtn.checked){
+        filterBar.style.display = "none"
+    } else filterBar.style.display = "flex"
+}
+
+filterBtn.onclick = showFilterBar
+
+//HOME ANSWER BUTTON
+let answerBtn = document.getElementById("answer");
+let choice = document.getElementById("choice");
+
+answerBtn.onclick = function redirectTo(){
+    if (choice.value === "yes") {
+        location.href = "http://localhost:2000/photographers"
+        // "https://cliche-app.herokuapp.com/photographers"
+    } else location.href = "http://localhost:2000/auth/signup"
+    // "https://cliche-app.herokuapp.com/auth/signup"
+}

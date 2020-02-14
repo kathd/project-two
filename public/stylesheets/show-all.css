@@ -5,6 +5,11 @@
 #profile-container {
     display: flex;
     justify-content: space-evenly;
+
+}
+
+#filterText {
+    font-size: 12px;
 }
 
 .form-container{
@@ -21,6 +26,7 @@
     grid-column-gap: 30px;
     grid-row-gap: 40px;
 }
+
 
 #all-photographers>a {
     width: 100%;
@@ -84,8 +90,35 @@
     margin-left: 20px;
 }
 
-@media (max-width : 1024px) {
+
+@media (max-width: 700px) {
+    .pages {
+        margin-top: 100px;
+    }
+    #profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    #all-photographers>a {
+        margin: 0
+    }
     #all-photographers {
-        grid-template-columns: 40vw;
+        grid-template-columns: repeat(1, 100%);
+        margin: 0 auto;
+    }
+   
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+    #all-photographers {
+        grid-template-columns: repeat(1, auto);
+        margin: 0 auto;
+    }
+    #profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    #all-photographers>a {
+        margin: 0
     }
 }

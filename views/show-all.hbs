@@ -1,9 +1,12 @@
 <div class="pages">
-    <h1>> ALL PHOTOGRAPHERS <</h1>
+    <h1>
+        > ALL PHOTOGRAPHERS < 
+        <p id="filterText">hide filter : <input type="checkbox" id="filterDisplay"></p>
+    </h1>
         <div id="profile-container">
-            <div class="form-container">
+            {{!-- <div class="form-container"> --}}
                 {{> filter}}
-            </div>
+            {{!-- </div> --}}
             <div id="all-photographers">
 
                 {{#unless photographers}}

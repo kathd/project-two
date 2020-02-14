@@ -27,7 +27,8 @@
             <form action="mailto:{{photographer.email}}" method="post" enctype="text/plain">
                 <input type="submit" value="BOOK">
             </form>
-            {{/if}}  
+            {{/if}}
+            <a href="/photographers/{{photographer._id}}/edit" data-id-photographer="{{photographer._id}}">Edit Profile</a>
         </div>
     </div>
 

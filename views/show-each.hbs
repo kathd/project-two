@@ -16,6 +16,9 @@
         <div>
             <p>Located in <b class="impt">{{photographer.location}}</b></p>
         </div>
+        {{#unless isLoggedIn}}
+        <p><b>Please sign in to know their rates...</b></p>
+        {{/unless}}
         <div class="like-book-container">
             {{#if isLoggedIn}}
                 <form class="like-wrapper" action="/photographers/{{photographer._id}}/solo/liked" method="POST">
@@ -56,7 +59,7 @@
                     </div> --}}
                     <div class="visual-container">
                         {{#unless isLoggedIn}}
-                        <p>Please sign in to see the portfolio...</p>
+                        <p><b>Please sign in to see the portfolio...</b></p>
                         {{/unless}}
                         {{#if isLoggedIn}}
                         {{#each photographer.portfolio}}

@@ -1,5 +1,5 @@
 const apiHandler = axios.create({
-    baseURL: `http://localhost:2000`
+    baseURL: `https://cliche-app.herokuapp.com/`
 })
 
 const allCheckboxes = document.querySelectorAll(".checkbox");
@@ -7,6 +7,20 @@ const loc = document.querySelector("#loc");
 const profilContainer = document.querySelector("#all-photographers");
 let profilArr = [];
 
+
+//HOME ANSWER BUTTON
+let answerBtn = document.getElementById("answer");
+let choice = document.getElementById("choice");
+
+if (answerBtn) {
+    answerBtn.onclick = function redirectTo(){
+        if (choice.value === "yes") {
+            location.href = "http://localhost:2000/photographers"
+            // "https://cliche-app.herokuapp.com/photographers"
+        } else location.href = "http://localhost:2000/auth/signup"
+        // "https://cliche-app.herokuapp.com/auth/signup"
+    }
+}
 
 function showFiltered() {
     // const checkedBox = document.querySelectorAll(".checkbox:checked");
@@ -26,6 +40,8 @@ function showFiltered() {
     }
 
 }
+
+
 
 function getMatchInfo(lieu, special) {
     apiHandler
@@ -95,8 +111,7 @@ function postInfos(profil) {
     })
 }
 
-allCheckboxes.forEach(checkbox => checkbox.onclick = showFiltered)
-loc.onchange = showFiltered
+
 
 //FILTER DISPLAY
 let filterBtn = document.getElementById("filterDisplay");
@@ -109,16 +124,10 @@ function showFilterBar(){
     } else filterBar.style.display = "flex"
 }
 
+
+allCheckboxes.forEach(checkbox => checkbox.onclick = showFiltered)
+loc.onchange = showFiltered
 filterBtn.onclick = showFilterBar
 
-//HOME ANSWER BUTTON
-let answerBtn = document.getElementById("answer");
-let choice = document.getElementById("choice");
 
-answerBtn.onclick = function redirectTo(){
-    if (choice.value === "yes") {
-        location.href = "http://localhost:2000/photographers"
-        // "https://cliche-app.herokuapp.com/photographers"
-    } else location.href = "http://localhost:2000/auth/signup"
-    // "https://cliche-app.herokuapp.com/auth/signup"
-}
+

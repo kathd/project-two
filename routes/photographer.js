@@ -4,11 +4,13 @@ const photographerModel = require("../models/Photographer");
 const userModel = require("../models/User")
 const reviewModel = require("../models/Review")
 const uploader = require("./../config/cloudinary");
+const protectUserRoute = require("../middlewares/protectUserRoute");
+const protectAdminRoute = require("../middlewares/protectAdminRoute");
 
 
 
 // Display all photographer 
-router.get("/manage", (req, res, next)=> {
+router.get("/manage", protectAdminRoute, (req, res, next)=> {
     photographerModel
     .find()
     .then(photographers => {
@@ -60,7 +62,7 @@ router.post('/filter', (req, res) => {
 
 
 
-router.get('/add', (req, res)=> {
+router.get('/add', protectAdminRoute, (req, res)=> {
     res.render('forms/add', {
         css: ['form.css']
     });
@@ -86,7 +88,7 @@ router.post('/add',uploader.single("profile_picture"), (req, res)=> {
 
    
 
-router.get("/:id/delete", (req, res, next) => {
+router.get("/:id/delete", protectAdminRoute, (req, res, next) => {
     
     photographerModel
     .findByIdAndDelete(req.params.id)
@@ -96,7 +98,7 @@ router.get("/:id/delete", (req, res, next) => {
     .catch(dbErr => console.error("OH no, db err :", dbErr));
 })
 
-router.get("/:id/edit",  (req, res, next) => {
+router.get("/:id/edit", protectAdminRoute, (req, res, next) => {
     photographerModel
     .findById(req.params.id)
     .populate('reviews')
@@ -173,7 +175,7 @@ router.post("/:id/edit", uploader.single("profile_picture"), (req, res, next) =>
 })
 
 
-router.post("/:id/solo/liked", (req, res, next) => {
+router.post("/:id/solo/liked", protectUserRoute, (req, res, next) => {
     userModel
     .findById(req.session.currentUser._id)
     .then(currentuser => {
@@ -193,7 +195,7 @@ router.post("/:id/solo/liked", (req, res, next) => {
     })
 })
 
-    router.post("/:id/solo/deletereview/:reviewId", (req, res, next) => {
+    router.post("/:id/solo/deletereview/:reviewId", protectAdminRoute, (req, res, next) => {
         photographerModel
         .findByIdAndUpdate(req.params.id, {$pull: {reviews : req.params.reviewId}}, {new:true})
         .then(photograph => {

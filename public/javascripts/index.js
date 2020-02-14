@@ -15,10 +15,8 @@ let choice = document.getElementById("choice");
 if (answerBtn) {
     answerBtn.onclick = function redirectTo(){
         if (choice.value === "yes") {
-            location.href = "http://localhost:2000/photographers"
-            // "https://cliche-app.herokuapp.com/photographers"
-        } else location.href = "http://localhost:2000/auth/signup"
-        // "https://cliche-app.herokuapp.com/auth/signup"
+            location.href = "https://cliche-app.herokuapp.com/photographers"
+        } else location.href = "https://cliche-app.herokuapp.com/auth/signup"
     }
 }
 

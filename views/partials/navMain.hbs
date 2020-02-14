@@ -1,9 +1,9 @@
 {{!-- APPLY STICKY NAV BAR!! --}}
 <nav id="nav-main" class="nav sticky">
 
-  <span class="navbar-toggle" id="js-navbar-toggle">
+  {{!-- <span class="navbar-toggle" id="js-navbar-toggle">
     <i class="fas fa-bars fa-2x"></i>
-  </span>
+  </span> --}}
 
   <div class="left-nav">
     <a href="/photographers">Our Talents</a>
@@ -26,29 +26,47 @@
     {{#if isLoggedIn}}
     <div class="admin-nav">
       <button class="dropbtn">Admin</button>
-        <div class="dropdown-content">
-          <a href="/photographers/add">Add</a>
-          <a href="/photographers/manage">Manage</a>
-        </div>
+      <div class="dropdown-content">
+        <a href="/photographers/add">Add</a>
+        <a href="/photographers/manage">Manage</a>
+      </div>
     </div>
     <div><a href="/account">Account</a></div>
     <div><a href="/auth/signout">Sign Out</a></div>
     {{/if}}
   </div>
 
-  {{!-- <div id="hiddenNav">
-    <a href="/"><img src="/images/logo/Fichier 164.png"></a>
-    <a href="/photographers">Our Talents</a>
-    {{#unless isLoggedIn}}
-    <a href="/auth/signup">Sign Up</a>
-    <a href="/auth/signin">Sign In</a>
-    {{/unless}}
-    {{#if isLoggedIn}}
-    <a href="/photographers/add">Add</a>
-    <a href="/photographers/manage">Manage</a>
-    <a href="/account">Account</a>
-    <a href="/auth/signout">Sign Out</a>
-    {{/if}}
-  </div> --}}
+  <div id="hiddenNav">
+    
+    <div id="topNav">
+      <span id="logo"><a href="/"><img src="/images/logo/Fichier 164.png"></a></span>
+      <span id="logo-xs"><a href="/"><img src="/images/logo/Fichier 564.png"></a></span>
+      <a class="navbar-toggle" id="js-navbar-toggle">
+        <i class="fas fa-bars fa-2x"></i>
+      </a>
+    </div>
+    {{!-- <a href="/"><span id="logo"></span></a> --}}
+    
+    <div class="main-nav">
+        <a href="/photographers">Our Talents</a>
+        {{#if showAbout}}
+        <a href="#about">About Us</a>
+        <a href="#contact">Join Us!</a>
+        {{/if}}
+
+        {{#unless isLoggedIn}}
+        <a href="/auth/signup">Sign Up</a>
+        <a href="/auth/signin">Sign In</a>
+        {{/unless}}
+
+        {{#if isLoggedIn}}
+        <a class="adminf" href="/photographers/add">Add</a>
+        <a class="adminf" href="/photographers/manage">Manage</a>
+        <a href="/account">Account</a>
+        <a href="/auth/signout">Sign Out</a>
+        {{/if}}
+      
+    </div>
+  </div>
 
 </nav>

@@ -1,5 +1,12 @@
-if (window.matchMedia("(max-width: 700px)").matches) {
-    /* The viewport is less than, or equal to, 700 pixels wide */
+const navMenu = document.getElementById('js-navbar-toggle');
+
+function smallNav() {
+  const links = document.querySelector(".main-nav");
+  if (links.style.display === "flex") {
+    links.style.display = "none";
   } else {
-    /* The viewport is greater than 700 pixels wide */
+    links.style.display = "flex";
   }
+}
+
+navMenu.onclick = smallNav;

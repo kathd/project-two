@@ -22,10 +22,10 @@
                             <img class="liked-img" src="{{this.profile_picture}}" alt="{{this.name}}">
                             <p>{{this.name}}</p>
                         </a>
-                        <form action="/account/{{this._id}}/remove" method="POST">
-                            {{!-- <button type="submit"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button> --}}
-                            <button class="btn-x" type="submit">Delete</button>
-                        </form>
+                            <form action="/account/{{this._id}}/remove" method="POST">
+                                {{!-- <button type="submit"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button> --}}
+                                <button class="btn-x" type="submit">Delete</button>
+                            </form>
                     </div>
                     {{/each}}
                 </div>

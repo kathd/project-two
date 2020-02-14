@@ -406,6 +406,7 @@ a {
       align-items: center;
       justify-content: center;
       display: none;
+      border-bottom: 1px solid #B62A3D;
     }
 
     .main-nav a {

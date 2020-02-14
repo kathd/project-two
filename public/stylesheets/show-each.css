@@ -82,9 +82,31 @@ input[type=submit]:hover {
     opacity: 0.7;
 }
 
-.each-photo {
-    width:30%;
-}
+/* .each-photo {
+  width: 30%;
+} */
+
+/* RESPONSIVE GRID FOR PORTFOLIO */
+
+/* .each-portfolio {
+  width: 95%;
+  display: grid;
+  --card-min-size: 16rem;
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-min-size), 1fr));
+  grid-gap: 1rem;
+} */
+
+/* .each-photo {
+
+  padding: 5rem 0;
+  text-align: center;
+  font-size: 1.2rem;
+  background: #70e6b5;
+  color: #ffffff;
+  list-style: none;
+} */
+
+/* END */
 
 .impt {
     color: #B62A3D;
@@ -97,6 +119,28 @@ input[type=submit]:hover {
     min-height: 80px;
     padding: 20px;
     margin: 10px 0;
+    position: relative;
+}
+
+p.comment {
+  margin-bottom: 20px;
+}
+
+p.commentor {
+  text-align: end;
+  margin-bottom: 20px;
+}
+
+.btn-x {
+  padding: 0 3px;
+  color: #B62A3D;
+  font-size: 10px;
+  background-color: #fff;
+  /* border: 0.5px solid; */
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  
 }
 
 /* === TABS === */
@@ -246,4 +290,72 @@ input[type=submit]:hover {
     animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
     animation-direction: alternate;
+  }
+
+  /* PORTFOLIO STYLING */
+
+  .visual-container {
+    width: 100%;
+    margin: auto;
+    columns: 4;
+  }
+  
+  .visual-container .box {
+    width: 100%;
+    /* margin: 0 0 20px; */
+    /* padding: 10px; */
+    background-color: #ffffff;
+    break-inside: avoid;
+    position: relative;
+  }
+  
+  .visual-container .box img {
+    max-width: 100%;
+  }
+  
+  @media (max-width: 1300px) {
+    .visual-container {
+      columns: 3;
+      width: calc(100% - 40px);
+      box-sizing: border-box;
+      padding: 20px 20px 20px 0;
+    }
+  }
+  
+  @media (max-width: 980px) {
+    
+    .each-profile-pic {
+      width: 150px;
+      height: 150px;
+      margin-top: 20%;
+    }
+
+
+    .visual-container {
+      columns: 2;
+    }
+  
+    .intro-container {
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .visual-container {
+      columns: 1;
+    }
+
+    .each-profile-pic {
+      width: 100px;
+      height: 100px;
+      margin-top: 30%;
+    }
+  }
+
+  @media (max-width: 600px) {
+
+    .each-profile-pic {
+      margin-top: 50%;
+    }
   }

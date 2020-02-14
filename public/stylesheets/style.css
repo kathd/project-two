@@ -184,7 +184,7 @@ a {
 }
 
 .search-container {
-  width: 100%;
+  width: auto;
   height: 40px;
   display: flex;
   flex-direction: row;
@@ -193,18 +193,7 @@ a {
   margin-bottom: 20px;
 }
 
-.search-container p {
-  margin: 0 10px;
-}
-
-.search-form {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.search-form button {
+.search-container button {
   padding: 10px;
   color: white;
   background-color: #B62A3D;
@@ -215,9 +204,10 @@ a {
   font-family: inherit;
 }
 
-.search-form button:hover {
+.search-container button:hover {
   color: #B62A3D;
   background-color: #fff;
+  cursor: pointer;
 }
 
 .join-us {

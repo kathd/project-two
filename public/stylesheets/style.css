@@ -415,6 +415,16 @@ a {
     #nav-main .adminf {
       color: #B62A3D;
     }
+    .intro-container h1 {
+      color: white;
+      font-size: 5em;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  
+    #contact>h2 {
+      text-align: center;
+    }
 
 
 }
@@ -434,5 +444,17 @@ a {
 
   #logo-xs img {
     width: 80px;
+  }
+
+  
+  .intro-container h1 {
+    color: white;
+    font-size: 5em;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  #contact>h2 {
+    text-align: center;
   }
 }

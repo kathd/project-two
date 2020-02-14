@@ -50,6 +50,11 @@
     box-sizing: border-box;
     padding: 20px 20px 20px 0;
   }
+
+  .text-join {
+    text-align: center;
+  }
+  
 }
 
 @media (max-width: 980px) {
@@ -72,6 +77,16 @@
     background-size: cover;
     background-position: center;
   }
+}
+
+.text-join {
+  font-size: 20px;
+  margin: 5px 0;
+
+}
+
+#contact h2 {
+  margin-top: 100px;
 }
 
 /* IMAGE DISPLAY TRANSITION/ANIMATION */
@@ -226,4 +241,12 @@ input[type=submit]:hover {
   .creator {
     margin: 0
   }
+
+  .text-join {
+    font-size: 20px;
+    margin: 5px 0;
+    text-align: center;
+  
+  }
+
 }

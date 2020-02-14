@@ -128,7 +128,7 @@ router.post("/:id/edit", uploader.single("profile_picture"), (req, res, next) =>
             
          } );
     })
-    router.get("/:id/solo", protectUserRoute, (req, res, next ) => {
+    router.get("/:id/solo", (req, res, next ) => {
         photographerModel
         .findById(req.params.id)
         .populate('fans')

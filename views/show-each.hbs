@@ -8,9 +8,11 @@
         <div>
             <p>{{photographer.description}}</p>
         </div>
+        {{#if isLoggedIn}}
         <div>
             <p>Price starts at <b class="impt">{{photographer.price}} euros</b> per day</p>
         </div>
+        {{/if}}
         <div>
             <p>Located at <b class="impt">{{photographer.location}}</b></p>
         </div>
@@ -53,11 +55,16 @@
                         {{/each}}
                     </div> --}}
                     <div class="visual-container">
+                        {{#unless isLoggedIn}}
+                        <p>Please sign in to see the portfolio...</p>
+                        {{/unless}}
+                        {{#if isLoggedIn}}
                         {{#each photographer.portfolio}}
                         <div class="box">
                             <img class="img-home" src={{this}}>
                         </div>
                         {{/each}}
+                        {{/if}}
                     </div>
                 </section>
                 <section id="tab-review" class="tab-panel">

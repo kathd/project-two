@@ -21,10 +21,17 @@
     {{#unless isLoggedIn}}
     <div><a href="/auth/signup">Sign Up</a></div>
     <div><a href="/auth/signin">Sign In</a></div>
+  
     {{/unless}}
 
     {{#if isLoggedIn}}
-    {{!-- {{#if isAdmin}} --}}
+      <div><a href="/account">Account</a></div>
+      <div><a href="/auth/signout">Sign Out</a></div>
+    {{/if}}
+
+
+
+    {{#if isAdmin}}
     <div class="admin-nav">
       <button class="dropbtn">Admin</button>
       <div class="dropdown-content">
@@ -32,9 +39,6 @@
         <a href="/photographers/manage">Manage</a>
       </div>
     </div>
-    {{!-- {{/if}} --}}
-    <div><a href="/account">Account</a></div>
-    <div><a href="/auth/signout">Sign Out</a></div>
     {{/if}}
   </div>
 
@@ -62,14 +66,16 @@
         {{/unless}}
 
         {{#if isLogggedIn}}
-        {{!-- {{#if isAdmin}} --}}
-        <a class="adminf" href="/photographers/add">Add</a>
-        <a class="adminf" href="/photographers/manage">Manage</a>
-        {{!-- {{/if}} --}}
         <a href="/account">Account</a>
         <a href="/auth/signout">Sign Out</a>
         {{/if}}
       
+        {{#if isAdmin}}
+        <a href="/account">Account</a>
+        <a class="adminf" href="/photographers/add">Add</a>
+        <a class="adminf" href="/photographers/manage">Manage</a>
+        <a href="/auth/signout">Sign Out</a>
+        {{/if}}
     </div>
   </div>
 
